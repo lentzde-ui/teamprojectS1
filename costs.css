@@ -1,0 +1,70 @@
+/* ==========================================
+   Costs Page Custom Stylesheet (costs.css)
+   Imports shared base styles from homepage.css
+   ========================================== */
+
+@import url('homepage.css');
+
+/* Expense Card Header Dividers */
+.card .subsection-title {
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--pastel-green-light);
+  margin-bottom: 10px;
+}
+
+/* Specific List Item Styling for Expense Breakdown Cards */
+.card ul {
+  padding-left: 20px;
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.card ul li {
+  margin-bottom: 6px;
+}
+
+.card ul li:last-child {
+  margin-bottom: 0;
+}
+
+.card ul li strong {
+  color: var(--text-main);
+}
+
+/* Feature Card Daily Budget Highlights */
+.feature-card p strong {
+  color: var(--pastel-green-dark);
+  font-size: 1rem;
+}
+
+/* Section Badge Layout Adjustments */
+.section-badge {
+  background: #f3f8f4;
+  border: 1px solid #c8e6c9;
+  border-left: 4px solid var(--pastel-green-dark);
+  padding: 10px 14px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-badge .badge-title {
+  font-weight: 700;
+  color: var(--pastel-green-dark);
+  font-size: 0.92rem;
+  margin-bottom: 2px;
+}
+
+.section-badge .badge-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+/* Image Card Figcaption Enhancements */
+.image-card figcaption p {
+  line-height: 1.4;
+  margin-top: 4px;
+}

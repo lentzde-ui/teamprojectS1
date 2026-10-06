@@ -1,0 +1,111 @@
+:root {
+  --pastel-green-light: #EAF7F1;
+  --pastel-green: #95E1D3;
+  --pastel-green-dark: #38A3A5;
+
+  --pastel-blue-light: #EBF4FC;
+  --pastel-blue: #A2D2FF;
+  --pastel-blue-dark: #5390D9;
+
+  --bg-color: #F8FAF9;
+  --card-bg: #FFFFFF;
+  --text-main: #2D3748;
+  --text-muted: #718096;
+  --border-color: #E2E8F0;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 10px 25px -5px rgba(149, 225, 211, 0.25);
+  --shadow-lg: 0 20px 30px -10px rgba(83, 144, 217, 0.2);
+
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* Header & Navigation */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.compass-icon {
+  width: 36px;
+  height: 36px;
+  stroke: var(--pastel-green-dark);
+  transition: var(--transition);
+}
+
+.logo:hover .compass-icon {
+  transform: rotate(45deg);
+  stroke: var(--pastel-blue-dark);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--pastel-green-dark);
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--pastel-green-dark);
+  border-radius: 2px;
+}
+
+/* Footer */
+.footer {
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--border-color);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

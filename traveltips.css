@@ -1,0 +1,88 @@
+/* ==========================================
+   Travel Tips & Info Page Custom Stylesheet
+   Imports base styling from homepage.css
+   ========================================== */
+
+@import url('homepage.css');
+
+/* Quick Info Cards */
+.info-card {
+  text-align: center;
+  padding: 24px 18px;
+}
+
+.info-card .info-icon {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.info-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+.info-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Seasonal Table Styling */
+.table-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.data-table th {
+  background-color: var(--pastel-green-light);
+  color: var(--pastel-green-dark);
+  font-weight: 700;
+  padding: 16px 20px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.data-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: #fafdfb;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f1f8f4;
+}
+
+/* Destination Cards */
+.destination-card h3 {
+  font-size: 1.15rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--pastel-green-light);
+}
+
+.destination-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}

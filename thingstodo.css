@@ -1,0 +1,113 @@
+/* ==========================================
+   Things To Do Page Custom Stylesheet
+   Imports base styling from homepage.css
+   ========================================== */
+
+@import url('homepage.css');
+
+/* Subtitle for Main Sections */
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-top: -12px;
+  margin-bottom: 24px;
+}
+
+/* Embedded Video Wrapper (16:9 Aspect Ratio) */
+.video-card {
+  padding: 24px;
+  text-align: center;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background-color: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Attraction Card Layout */
+.attraction-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.attraction-card .card-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.attraction-card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.attraction-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+/* Badge Styling */
+.badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.badge-coastal {
+  background: rgba(162, 210, 255, 0.9);
+  color: #1A365D;
+  backdrop-filter: blur(4px);
+}
+
+.badge-history {
+  background: rgba(214, 234, 223, 0.9);
+  color: #1C4532;
+  backdrop-filter: blur(4px);
+}
+
+.badge-hiking {
+  background: rgba(255, 229, 217, 0.9);
+  color: #632B1A;
+  backdrop-filter: blur(4px);
+}
+
+/* Card External Links */
+.attraction-card .card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--pastel-green-dark);
+  text-decoration: none;
+  transition: var(--transition);
+  margin-top: auto;
+}
+
+.attraction-card .card-link:hover {
+  color: var(--pastel-blue-dark);
+  gap: 10px;
+}

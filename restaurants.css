@@ -1,0 +1,55 @@
+/* ==========================================
+   Restaurants Page Custom Stylesheet
+   Imports base styling from homepage.css
+   ========================================== */
+
+@import url('homepage.css');
+
+/* Custom Subsection Divider Styling */
+.card .subsection-title {
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--pastel-green-light);
+  margin-bottom: 10px;
+}
+
+/* List Item Formatting inside Cards */
+.card ul {
+  padding-left: 20px;
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.card ul li {
+  margin-bottom: 6px;
+}
+
+.card ul li:last-child {
+  margin-bottom: 0;
+}
+
+.card ul li strong {
+  color: var(--text-main);
+}
+
+/* Feature Cards for Foods to Try */
+.feature-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+/* External Link Card Buttons */
+.food-links-grid a {
+  border-color: #c8e6c9;
+  background-color: #f3f8f4;
+  text-decoration: none;
+  color: var(--pastel-green-dark);
+  transition: var(--transition);
+}
+
+.food-links-grid a:hover {
+  background-color: var(--pastel-green-light);
+  border-color: var(--pastel-green);
+  transform: translateY(-2px);
+}
