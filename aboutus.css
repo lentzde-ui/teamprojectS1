@@ -1,0 +1,44 @@
+/* Container centering for circular profile photos */
+.small-photo-box {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin: 0 auto 12px auto !important;
+}
+
+/* Image styles forced to center directly over the name */
+.card .small-photo-box img,
+.card .small-photo-box img.member-photo {
+  width: 150px !important;
+  height: 150px !important;
+  max-width: 150px !important;
+  max-height: 150px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block !important;
+  margin: 0 auto !important;
+  border: 3px solid #8fbc8f !important;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Specific framing adjustment for Delaney */
+.card .small-photo-box img.delaney-photo {
+  object-position: 15% top !important;
+}
+
+/* Center card titles directly beneath the images */
+.member-title {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  text-align: center !important;
+}
+
+.section-badge {
+  margin-top: 6px;
+}
+
+.badge-desc a {
+  color: #1a5fb4;
+  text-decoration: underline;
+}
