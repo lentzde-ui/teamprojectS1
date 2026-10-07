@@ -1,0 +1,229 @@
+/* Color Palette & Base Variables */
+:root {
+  --pastel-green-light: #e8f5e9;
+  --pastel-green: #8fbc8f;
+  --pastel-green-dark: #2e7d32;
+  --pastel-blue-dark: #1565c0;
+  --bg-color: #f9fbf9;
+  --card-bg: #ffffff;
+  --text-main: #2c3e50;
+  --text-muted: #555555;
+  --border-color: #e0e0e0;
+  --radius-md: 8px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+  --transition: all 0.2s ease-in-out;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header & Navigation */
+.teal-header {
+  background-color: var(--pastel-green-light);
+  padding: 16px 16px 20px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.centered-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.centered-nav a {
+  color: #1a5fb4;
+  text-decoration: underline;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.centered-nav a:hover {
+  color: var(--pastel-green-dark);
+}
+
+.centered-nav a.active {
+  font-weight: 700;
+}
+
+.header-title-block {
+  text-align: center;
+}
+
+.header-title-block h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #111111;
+  margin: 0 0 2px 0;
+  letter-spacing: -0.5px;
+}
+
+.header-title-block .subtitle {
+  font-size: 1rem;
+  color: #444444;
+  margin: 0;
+}
+
+/* Section Spacing & Layout */
+.section {
+  padding: 10px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.45rem;
+  color: var(--pastel-green-dark);
+  margin: 0 0 8px 0;
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+}
+
+.grid-2 { 
+  grid-template-columns: repeat(2, 1fr); 
+}
+
+@media (max-width: 600px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Compact Cards */
+.card {
+  background: var(--card-bg);
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.card p {
+  margin: 0;
+}
+
+/* Contact Form Styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--pastel-green-dark);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 8px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 0.9rem;
+  background-color: var(--bg-color);
+  transition: var(--transition);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--pastel-green-dark);
+  background-color: #ffffff;
+}
+
+.submit-btn {
+  background-color: var(--pastel-green-dark);
+  color: #ffffff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 4px;
+}
+
+.submit-btn:hover {
+  background-color: #1b5e20;
+}
+
+/* Google Map Wrapper */
+.map-wrapper {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  line-height: 0;
+}
+
+.section-badge {
+  background: #f3f8f4;
+  border: 1px solid #c8e6c9;
+  border-left: 4px solid var(--pastel-green-dark);
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-title {
+  font-weight: 700;
+  color: var(--pastel-green-dark);
+  font-size: 0.9rem;
+}
+
+.badge-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--pastel-green-light);
+  border-top: 1px solid var(--border-color);
+  padding: 14px 0;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer p {
+  margin: 2px 0;
+}
