@@ -11,7 +11,7 @@
     <!-- Google Fonts & Material Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/icon?family=Material-Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Materialize CSS, jQuery, and Materialize JS -->
@@ -19,14 +19,36 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <!-- Style Desktop Video Sizing -->
     <style>
+        /* Video Sizing & Black Box Removal */
         .video-wrapper {
-            max-width: 650px; 
+            max-width: 650px;
             width: 100%;
-            margin: 20px auto; 
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+        }
+        .video-container {
+            background-color: transparent !important; /* Removes Materialize default black background */
+        }
+
+        /* Equal Height Attraction Cards */
+        .row.equal-height-cards {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .row.equal-height-cards > .col {
+            display: flex;
+        }
+        .row.equal-height-cards .card {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .row.equal-height-cards .card .card-image img {
+            height: 200px; /* Standardized height for all card images */
+            object-fit: cover;
+        }
+        .row.equal-height-cards .card .card-content {
+            flex-grow: 1; /* Stretches text content to equalize heights */
         }
     </style>
 
@@ -83,11 +105,19 @@
             <h1>Discover Ireland</h1>
             <p>Explore majestic coastlines, ancient medieval castles, and iconic mountain trails across the Emerald Isle.</p>
 
-            <!-- Featured Video Embed (Constrained for Desktop) -->
+            <!-- Featured Video Embed -->
             <div class="video-wrapper">
-                 <div class="video-container">
-        <iframe width="853" height="480" src="https://www.youtube.com/embed/jgMDAnrtfqs?autoplay=1&mute=1&loop=1&playlist=jgMDAnrtfqs" frameborder="0" allowfullscreen></iframe>
-      </div>
+                <div class="video-container">
+                    <iframe width="560" 
+                            height="315" 
+                            src="https://www.youtube.com/embed/jgMDAnrtfqs?autoplay=1&mute=1&loop=1&playlist=jgMDAnrtfqs" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
             </div>
             <a href="#Attract" class="btn btn-primary teal darken-1" style="margin-top: 15px;">Explore Destinations</a>
         </div>
@@ -98,7 +128,7 @@
         <div style="width: 95%; margin: 0 auto;">
             <h4 class="header center-align">Attraction Directory</h4>
             
-            <div class="row">
+            <div class="row equal-height-cards">
                 <!-- Attraction Card 1 -->
                 <div class="col s12 m6 l3">
                     <div class="card center-align">
