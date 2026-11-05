@@ -7,27 +7,41 @@
     <title>Ireland Travel | Things to Do</title>
     <link rel="stylesheet" href="thingstodo.css">
     <link rel="stylesheet" href="global.css">
-    <!-- Google Fonts -->
+    
+    <!-- Google Fonts & Material Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material-Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css>
+    
+    <!-- Materialize CSS, jQuery, and Materialize JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Style Fix for Desktop Video Sizing -->
+    <style>
+        .video-wrapper {
+            max-width: 650px; /* Prevents video from growing too large on desktop */
+            width: 100%;
+            margin: 20px auto; /* Centers video horizontally */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
     <script>
         $(document).ready(function() {
             $('.sidenav').sidenav();
             $('.parallax').parallax();
-              $('.scrollspy').scrollSpy()
-                $('.datepicker').datepicker();
-            });
         });
     </script>
 </head>
 
 <body>
 
-    <!-- Navigation Header (Compass Icon Only) -->
+    <!-- Navigation Header -->
     <header>
         <div class="navbar-fixed">
             <nav class="teal darken-1">
@@ -52,7 +66,7 @@
             </nav>
         </div>
 
-        <!-- MATERIALIZE JAVASCRIPT FEATURE: Sidenav for Mobile Navigation (https://materializecss.com/navbar.html)[cite: 3] -->
+        <!-- Mobile Sidenav -->
         <ul class="sidenav" id="mobile-demo">
             <li><a href="index.html">Home</a></li>
             <li><a href="costs.html">Cost</a></li>
@@ -64,26 +78,35 @@
         </ul>
     </header>
 
-    <!-- Hero Banner with Autoplay Video -->
-    <section class="hero">
+    <!-- Hero Banner with Video -->
+    <section class="hero container center-align" style="margin-top: 20px;">
         <div class="hero-content">
             <h1>Discover Ireland</h1>
             <p>Explore majestic coastlines, ancient medieval castles, and iconic mountain trails across the Emerald Isle.</p>
 
-            <!-- Featured Video Embed -->
+            <!-- Featured Video Embed (Constrained for Desktop) -->
             <div class="video-wrapper">
                 <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jgMDAnrtfqs?si=aaASwnizkWVzJII4" title="YouTube video player" ;frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="560" 
+                            height="315" 
+                            src="https://www.youtube.com/embed/jgMDAnrtfqs?autoplay=1&mute=1&loop=1&playlist=jgMDAnrtfqs" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                    </iframe>
                 </div>
             </div>
-            <a href="#Attract" class="btn btn-primary">Explore Destinations</a>
+            <a href="#Attract" class="btn btn-primary teal darken-1" style="margin-top: 15px;">Explore Destinations</a>
         </div>
     </section>
 
-    <!-- Things To Do Section -->
-   <section class="container scrollspy" id="Attract">
+    <!-- Attraction Directory Section -->
+    <section class="section" id="Attract">
         <div style="width: 95%; margin: 0 auto;">
             <h4 class="header center-align">Attraction Directory</h4>
+            
             <div class="row">
                 <!-- Attraction Card 1 -->
                 <div class="col s12 m6 l3">
@@ -181,6 +204,7 @@
         </div>
     </footer>
 
+    <!-- Pagination -->
     <ul class="pagination center-align teal darken-1 black-text">
         <li class="waves-effect"><a href="index.html">1</a></li>
         <li class="waves-effect"><a href="costs.html">2</a></li>
