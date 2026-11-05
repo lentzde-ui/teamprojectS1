@@ -384,24 +384,41 @@
 <body>
 
   <!-- Top Navigation & Header -->
-  <header class="site-header">
-    <div class="container">
-      <nav class="top-nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="restaurants.html">Restaurants</a>
-        <a href="thingstodo.html">Things To Do</a>
-        <a href="traveltips.html">Travel Tips</a>
-        <a href="costs.html">Costs</a>
-        <a href="aboutus.html">About Us</a>
-        <a href="contact.html">Contact Us</a>
-      </nav>
+  <header>
+        <div class="navbar-fixed">
+            <nav class="teal darken-1">
+                <div class="nav-wrapper container">
+                    <!-- Brand Logo with Icon -->
+                    <a href="index.html" class="brand-logo valign-wrapper">
+                        <i class="material-icons left">explore</i>Explore Ireland
+                    </a>
+                    <!-- Mobile Hamburger Trigger -->
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <!-- Desktop Navigation Links -->
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="costs.html">Cost</a></li>
+                        <li><a href="restaurants.html">Restaurants</a></li>
+                        <li><a href="Thingstodo.html">Things to Do</a></li>
+                        <li><a href="traveltips.html">Travel Tips</a></li>
+                        <li class="active"><a href="contact.html">Contact Us</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
-      <div class="header-titles">
-        <h1>Discover Ireland</h1>
-        <p class="subtitle">Your Guide to the Emerald Isle</p>
-      </div>
-    </div>
-  </header>
+        <!-- Mobile Sidenav -->
+        <ul class="sidenav" id="mobile-demo">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="costs.html">Cost</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
+            <li><a href="Thingstodo.html">Things to Do</a></li>
+            <li><a href="traveltips.html">Travel Tips</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+    </header>
 
   <!-- Main Content Area -->
   <main class="container">
