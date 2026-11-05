@@ -1,121 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Ctrl Alt Elite</title>
-  <!-- CSS imports -->
-  <link rel="stylesheet" href="global.css">
-  <link rel="stylesheet" href="contact.css">
-  <link rel="stylesheet" href="aboutus.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ireland Travel | About Us</title>
+    <link rel="stylesheet" href="thingstodo.css">
+    <link rel="stylesheet" href="global.css">
+    <!-- Google Fonts & Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Materialize CSS & JavaScript -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Materialize JS Feature 1: Sidenav Initialization
+            var sidenavElems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sidenavElems);
+
+            // Materialize JS Feature 2: Slider (Slideshow with 4 group members)
+            var sliderElems = document.querySelectorAll('.slider');
+            M.Slider.init(sliderElems, {
+                indicators: true,
+                height: 450,
+                duration: 500,
+                interval: 3500
+            });
+
+            // Materialize JS Feature 3: Collapsible (Interactive Accordion)
+            var collapsibleElems = document.querySelectorAll('.collapsible');
+            M.Collapsible.init(collapsibleElems);
+
+            // Materialize JS Feature 4: Tooltips
+            var tooltipElems = document.querySelectorAll('.tooltipped');
+            M.Tooltip.init(tooltipElems);
+        });
+    </script>
 </head>
 <body>
 
-  <!-- Header & Navigation Section -->
-  <header class="teal-header">
-    <div class="header-content">
-
-      <!-- Centered Navigation Menu -->
-            <nav class="centered-nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="restaurants.html">Restaurants</a>
-        <a href="costs.html">Contact Us</a>
-        <a href="Thingstodo.html">Things To Do</a>
-        <a href="traveltips.html">Travel Tips</a>
-        <a href="aboutus.html"class="active">About Us</a>
-        <a href="contact.html">Costs</a>
-      </nav>
-
-      <!-- Main Page Title -->
-      <div class="header-title-block">
-        <h1>About Us</h1>
-        <p class="subtitle">Meet Team Ctrl Alt Elite • Oxford, Ohio</p>
-      </div>
-
-    </div>
-  </header>
-
-  <main class="container">
-
-    <section class="section">
-      <div class="grid grid-2">
-
-        <!-- 1. Delaney Lentz -->
-        <div class="card text-center-card">
-          <div class="small-photo-box">
-            <img src="delaney update picture.jpeg" alt="Delaney Lentz" class="member-photo delaney-photo" style="width: 150px; height: 150px; max-width: 150px; max-height: 150px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto;">
-          </div>
-          <h2 class="section-title member-title">Delaney Lentz</h2>
-          <div class="section-badge">
-            <span class="badge-title">Major</span>
-            <span class="badge-desc">Sport Communications and Media</span>
-          </div>
-          <div class="section-badge">
-            <span class="badge-title">Email</span>
-            <span class="badge-desc"><a href="mailto:lentzde@miamioh.edu">lentzde@miamioh.edu</a></span>
-          </div>
+    <!-- Navigation Header -->
+    <header>
+        <div class="navbar-fixed">
+            <nav class="teal darken-1">
+                <div class="nav-wrapper container">
+                    <!-- Brand Logo with Icon -->
+                    <a href="Thingstodo.html" class="brand-logo valign-wrapper">
+                        <i class="material-icons left">explore</i>Explore Ireland
+                    </a>
+                    <!-- Mobile Hamburger Trigger -->
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <!-- Desktop Navigation Links -->
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="costs.html">Cost</a></li>
+                        <li><a href="restaurants.html">Restaurants</a></li>
+                        <li><a href="Thingstodo.html">Things to Do</a></li>
+                        <li><a href="traveltips.html">Travel Tips</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li class="active"><a href="aboutus.html">About Us</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
 
-        <!-- 2. Kaileigh Schneberger -->
-        <div class="card text-center-card">
-          <div class="small-photo-box">
-            <img src="kaileigh picture.png" alt="Kaileigh Schneberger" class="member-photo" style="width: 150px; height: 150px; max-width: 150px; max-height: 150px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto;">
-          </div>
-          <h2 class="section-title member-title">Kaileigh Schneberger</h2>
-          <div class="section-badge">
-            <span class="badge-title">Major</span>
-            <span class="badge-desc">Sport Communications and Media</span>
-          </div>
-          <div class="section-badge">
-            <span class="badge-title">Email</span>
-            <span class="badge-desc"><a href="mailto:schnebk@miamioh.edu">schnebk@miamioh.edu</a></span>
-          </div>
+        <!-- Mobile Sidenav -->
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="costs.html">Cost</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
+            <li><a href="Thingstodo.html">Things to Do</a></li>
+            <li><a href="traveltips.html">Travel Tips</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li class="active"><a href="aboutus.html">About Us</a></li>
+        </ul>
+    </header>
+
+    <!-- Page Title Header -->
+    <main class="container style=" margin-top: 30px;>
+        <div class="row center-align">
+            <div class="col s12">
+                <h3 class="teal-text text-darken-2" style="font-weight: 700;">Meet Team Control Alt Elite</h3>
+                <p class="flow-text grey-text text-darken-1">
+                    We are a passionate team of web developers and travel enthusiasts dedicated to creating the ultimate travel guide for exploring Ireland.
+                </p>
+            </div>
         </div>
 
-        <!-- 3. Chaiya Herberger -->
-        <div class="card text-center-card">
-          <div class="small-photo-box">
-            <img src="chaiyapicture.jpg" alt="Chaiya Herberger" class="member-photo" style="width: 150px; height: 150px; max-width: 150px; max-height: 150px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto;">
-          </div>
-          <h2 class="section-title member-title">Chaiya Herberger</h2>
-          <div class="section-badge">
-            <span class="badge-title">Major</span>
-            <span class="badge-desc">Emerging Technology in Business and Design</span>
-          </div>
-          <div class="section-badge">
-            <span class="badge-title">Email</span>
-            <span class="badge-desc"><a href="mailto:herberc3@miamioh.edu">herberc3@miamioh.edu</a></span>
-          </div>
+        <!-- SLIDESHOW: Materialize Slider with 4 Group Members -->
+        <section class="section">
+            <h4 class="center-align header">Our Team Members</h4>
+            <div class="slider">
+                <ul class="slides">
+                    <!-- Slide 1: Group Member 1 -->
+                    <li>
+                        <img src="delaney%20update%20picture.jpeg" alt="Delaney - Lead Developer">
+                        <div class="caption center-align">
+                            <h3 class="white-text text-shadow">Delaney Lentz</h3>
+                            <h5 class="light grey-text text-lighten-3">Team Leader</h5>
+                        </div>
+                    </li>
+                    <!-- Slide 2: Group Member 2 -->
+                    <li>
+                        <img src="kaileigh.png" alt="Kaileigh">
+                        <div class="caption left-align">
+                            <h3 class="white-text text-shadow">Kaileigh Schneberger</h3>
+                            <h5 class="light grey-text text-lighten-3">Group member 2</h5>
+                        </div>
+                    </li>
+                    <!-- Slide 3: Group Member 3 -->
+                    <li>
+                        <img src="simone%20picture.jpeg" alt="simone mercer">
+                        <div class="caption right-align">
+                            <h3 class="white-text text-shadow">Simone Mercer</h3>
+                            <h5 class="light grey-text text-lighten-3">Group Member 3</h5>
+                        </div>
+                    </li>
+                    <!-- Slide 4: Group Member 4 -->
+                    <li>
+                        <img src="member4.jpg" alt="Chaiya Herberger">
+                        <div class="caption center-align">
+                            <h3 class="white-text text-shadow">Chaiya Herberger</h3>
+                            <h5 class="light grey-text text-lighten-3">Group Member 4</h5>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- MATERIALIZE JAVASCRIPT FEATURE: Collapsible Accordion -->
+        <section class="section">
+            <h4 class="center-align header">Project Overview & Responsibilities</h4>
+            <ul class="collapsible popout">
+                <li class="active">
+                    <div class="collapsible-header teal darken-1 white-text">
+                        <i class="material-icons">flag</i>Our Mission
+                    </div>
+                    <div class="collapsible-body">
+                        <span>Our team set out to build an accessible, beautifully responsive web portal showcasing the rich history, scenic landmarks, and travel logistics across Ireland.</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header teal darken-1 white-text">
+                        <i class="material-icons">group</i>Team Division of Labor
+                    </div>
+                    <div class="collapsible-body">
+                        <p><strong>Delaney:</strong> Group leader ensuring progress is being made. Coded and made the Contact Us and Home pages.</p>
+                        <p><strong>Kaileigh:</strong> Helped ensure unitly in the pages while designing and coding the About Us and Things to Do pages.</p>
+                        <p><strong>Simone:</strong> Designed and coded the Travel Tips page.</p>
+                        <p><strong>Chaiya:</strong> Designed and coded the Restaurants page.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header teal darken-1 white-text">
+                        <i class="material-icons">code</i>Technologies Used
+                    </div>
+                    <div class="collapsible-body">
+                        <span>We were able to build this website with the knowledge gained from class activties, homework, and the help of Gemini.</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Interactive Contact / Social Quick Links -->
+        <section class="section center-align">
+            <h5>Get in Touch with Our Team</h5>
+            <a class="btn-floating btn-large teal darken-3 tooltipped waves-effect waves-light" data-position="bottom" data-tooltip="Visit Contact Page" href="contact.html"><i class="material-icons">send</i></a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer teal darken-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Explore Ireland</h5>
+                    <p class="grey-text text-lighten-4">See other helpful tips for traveling to Ireland.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="index.html">Home</a></li>
+                        <li><a class="grey-text text-lighten-3" href="costs.html">Cost</a></li>
+                        <li><a class="grey-text text-lighten-3" href="restaurants.html">Restaurants</a></li>
+                        <li><a class="grey-text text-lighten-3" href="Thingstodo.html">Things To Do</a></li>
+                        <li><a class="grey-text text-lighten-3" href="traveltips.html">Travel Tips</a></li>
+                        <li><a class="grey-text text-lighten-3" href="contact.html">Contact Us</a></li>
+                        <li><a class="grey-text text-lighten-3" href="AboutUs.html">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
-        <!-- 4. Simone Mercer -->
-        <div class="card text-center-card">
-          <div class="small-photo-box">
-            <img src="simone picture.jpeg" alt="Simone Mercer" class="member-photo" style="width: 150px; height: 150px; max-width: 150px; max-height: 150px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto;">
-          </div>
-          <h2 class="section-title member-title">Simone Mercer</h2>
-          <div class="section-badge">
-            <span class="badge-title">Major</span>
-            <span class="badge-desc">Sport Communications and Media</span>
-          </div>
-          <div class="section-badge">
-            <span class="badge-title">Email</span>
-            <span class="badge-desc"><a href="mailto:mercersc@miamioh.edu">mercersc@miamioh.edu</a></span>
-          </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2026 Control Alt Elite, All Rights Reserved.
+            </div>
         </div>
+    </footer>
 
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <p>&copy; 2026 Travel Destination Project | Ctrl Alt Elite</p>
-      <p>Discover Ireland: Your guide to exploring the Emerald Isle.</p>
-    </div>
-  </footer>
+    <!-- Pagination -->
+    <ul class="pagination center-align teal darken-1 black-text">
+        <li class="waves-effect"><a href="index.html">1</a></li>
+        <li class="waves-effect"><a href="costs.html">2</a></li>
+        <li class="waves-effect"><a href="restaurants.html">3</a></li>
+        <li class="waves-effect"><a href="Thingstodo.html">4</a></li>
+        <li class="waves-effect"><a href="traveltips.html">5</a></li>
+        <li class="waves-effect"><a href="contact.html">6</a></li>
+        <li class="active teal lighten-2 black-text"><a href="AboutUs.html">7</a></li>
+    </ul>
 
 </body>
 </html>
