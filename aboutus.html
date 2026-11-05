@@ -9,31 +9,44 @@
     <!-- Google Fonts & Material Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Fixed: Material+Icons URL syntax -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Materialize CSS & JavaScript -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <!-- CSS Fix for Desktop Image Formatting & Bottom Caption Positioning -->
     <style>
-        .slider .slides {
-            background-color: #004d40; /* Dark teal background matching site theme */
+        /* Responsive Desktop Height & Framing Fixes */
+        @media only screen and (min-width: 993px) {
+            .slider, 
+            .slider .slides {
+                height: 550px !important; /* Expands height on desktop to fit portrait photos */
+            }
         }
+
+        .slider .slides {
+            background-color: #004d40; /* Dark teal background fill */
+        }
+
         .slider .slides li img {
-            object-fit: contain !important; /* Prevents stretching and cropping */
-            object-position: center center !important;
+            object-fit: cover !important; /* Fills slide without stretching */
+            object-position: center 20% !important; /* Aligns photos near the top so faces aren't cut off */
             width: 100% !important;
             height: 100% !important;
         }
-        /* Moves slideshow text captions to the bottom of the slides */
+
+        /* Bottom Caption Styling with Contrast Overlay */
         .slider .slides li .caption {
             top: auto !important;
-            bottom: 40px !important; /* Positioned right above indicator dots */
-            background: rgba(0, 0, 0, 0.6); /* Dark backdrop for text readability */
+            bottom: 35px !important; /* Positions text neatly at the bottom */
+            background: rgba(0, 0, 0, 0.65); /* Dark background overlay for clear text reading */
             border-radius: 8px;
-            padding: 10px 20px;
+            padding: 12px 24px;
+            display: inline-block;
+        }
+
+        .slider .indicators {
+            z-index: 10; /* Ensures indicator dots sit on top of captions */
         }
     </style>
 
@@ -43,13 +56,13 @@
             var sidenavElems = document.querySelectorAll('.sidenav');
             M.Sidenav.init(sidenavElems);
 
-            // Materialize JS Feature 2: Slider (Slideshow with 4 group members)
+            // Materialize JS Feature 2: Slider (2-second automated transition)
             var sliderElems = document.querySelectorAll('.slider');
             M.Slider.init(sliderElems, {
                 indicators: true,
-                height: 450,
+                height: 550, // Matches CSS desktop height
                 duration: 500,
-                interval: 3500
+                interval: 2000 // Slides every 2 seconds
             });
 
             // Materialize JS Feature 3: Collapsible (Interactive Accordion)
@@ -119,7 +132,7 @@
                 <ul class="slides">
                     <!-- Slide 1: Group Member 1 -->
                     <li>
-                        <img src="delaney update picture.jpeg" alt="Delaney - Lead Developer">
+                        <img src="delaney%20update%20picture.jpeg" alt="Delaney - Lead Developer">
                         <div class="caption center-align">
                             <h3 class="white-text text-shadow">Delaney Lentz</h3>
                             <h5 class="light grey-text text-lighten-3">Team Leader</h5>
@@ -128,22 +141,22 @@
                     <!-- Slide 2: Group Member 2 -->
                     <li>
                         <img src="kaileigh.png" alt="Kaileigh">
-                        <div class="caption left-align">
+                        <div class="caption center-align">
                             <h3 class="white-text text-shadow">Kaileigh Schneberger</h3>
                             <h5 class="light grey-text text-lighten-3">Group member 2</h5>
                         </div>
                     </li>
                     <!-- Slide 3: Group Member 3 -->
                     <li>
-                        <img src="simone picture.jpeg" alt="simone mercer">
-                        <div class="caption right-align">
+                        <img src="simone%20picture.jpeg" alt="simone mercer">
+                        <div class="caption center-align">
                             <h3 class="white-text text-shadow">Simone Mercer</h3>
                             <h5 class="light grey-text text-lighten-3">Group Member 3</h5>
                         </div>
                     </li>
                     <!-- Slide 4: Group Member 4 -->
                     <li>
-                        <img src="chaiyapicture.jpg" alt="Chaiya Herberger">
+                        <img src="member4.jpg" alt="Chaiya Herberger">
                         <div class="caption center-align">
                             <h3 class="white-text text-shadow">Chaiya Herberger</h3>
                             <h5 class="light grey-text text-lighten-3">Group Member 4</h5>
