@@ -9,19 +9,31 @@
     <!-- Google Fonts & Material Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/icon?family=Material-Icons" rel="stylesheet">
+    <!-- Fixed: Material+Icons URL syntax -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Materialize CSS & JavaScript -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+    <!-- CSS Fix for Desktop Image Formatting & Bottom Caption Positioning -->
     <style>
-        /* CSS to center images in the Materialize slideshow */
+        .slider .slides {
+            background-color: #004d40; /* Dark teal background matching site theme */
+        }
         .slider .slides li img {
-            object-fit: cover;
-            object-position: center center;
-            width: 100%;
-            height: 100%;
+            object-fit: contain !important; /* Prevents stretching and cropping */
+            object-position: center center !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+        /* Moves slideshow text captions to the bottom of the slides */
+        .slider .slides li .caption {
+            top: auto !important;
+            bottom: 40px !important; /* Positioned right above indicator dots */
+            background: rgba(0, 0, 0, 0.6); /* Dark backdrop for text readability */
+            border-radius: 8px;
+            padding: 10px 20px;
         }
     </style>
 
@@ -31,13 +43,13 @@
             var sidenavElems = document.querySelectorAll('.sidenav');
             M.Sidenav.init(sidenavElems);
 
-            // Materialize JS Feature 2: Slider (2-second interval)
+            // Materialize JS Feature 2: Slider (Slideshow with 4 group members)
             var sliderElems = document.querySelectorAll('.slider');
             M.Slider.init(sliderElems, {
                 indicators: true,
                 height: 450,
                 duration: 500,
-                interval: 2000 // Slides every 2 seconds
+                interval: 3500
             });
 
             // Materialize JS Feature 3: Collapsible (Interactive Accordion)
@@ -107,7 +119,7 @@
                 <ul class="slides">
                     <!-- Slide 1: Group Member 1 -->
                     <li>
-                        <img src="delaney%20update%20picture.jpeg" alt="Delaney - Lead Developer">
+                        <img src="delaney update picture.jpeg" alt="Delaney - Lead Developer">
                         <div class="caption center-align">
                             <h3 class="white-text text-shadow">Delaney Lentz</h3>
                             <h5 class="light grey-text text-lighten-3">Team Leader</h5>
@@ -116,15 +128,15 @@
                     <!-- Slide 2: Group Member 2 -->
                     <li>
                         <img src="kaileigh.png" alt="Kaileigh">
-                        <div class="caption center-align">
+                        <div class="caption left-align">
                             <h3 class="white-text text-shadow">Kaileigh Schneberger</h3>
-                            <h5 class="light grey-text text-lighten-3">Group Member 2</h5>
+                            <h5 class="light grey-text text-lighten-3">Group member 2</h5>
                         </div>
                     </li>
                     <!-- Slide 3: Group Member 3 -->
                     <li>
-                        <img src="simone%20picture.jpeg" alt="Simone Mercer">
-                        <div class="caption center-align">
+                        <img src="simone picture.jpeg" alt="simone mercer">
+                        <div class="caption right-align">
                             <h3 class="white-text text-shadow">Simone Mercer</h3>
                             <h5 class="light grey-text text-lighten-3">Group Member 3</h5>
                         </div>
@@ -159,7 +171,7 @@
                     </div>
                     <div class="collapsible-body">
                         <p><strong>Delaney:</strong> Group leader ensuring progress is being made. Coded and made the Contact Us and Home pages.</p>
-                        <p><strong>Kaileigh:</strong> Helped ensure unity in the pages while designing and coding the About Us and Things to Do pages.</p>
+                        <p><strong>Kaileigh:</strong> Helped ensure unitly in the pages while designing and coding the About Us and Things to Do pages.</p>
                         <p><strong>Simone:</strong> Designed and coded the Travel Tips page.</p>
                         <p><strong>Chaiya:</strong> Designed and coded the Restaurants page.</p>
                     </div>
@@ -169,7 +181,7 @@
                         <i class="material-icons">code</i>Technologies Used
                     </div>
                     <div class="collapsible-body">
-                        <span>We were able to build this website with the knowledge gained from class activities, homework, and the help of Gemini.</span>
+                        <span>We were able to build this website with the knowledge gained from class activties, homework, and the help of Gemini.</span>
                     </div>
                 </li>
             </ul>
@@ -199,7 +211,7 @@
                         <li><a class="grey-text text-lighten-3" href="Thingstodo.html">Things To Do</a></li>
                         <li><a class="grey-text text-lighten-3" href="traveltips.html">Travel Tips</a></li>
                         <li><a class="grey-text text-lighten-3" href="contact.html">Contact Us</a></li>
-                        <li><a class="grey-text text-lighten-3" href="aboutus.html">About Us</a></li>
+                        <li><a class="grey-text text-lighten-3" href="AboutUs.html">About Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -219,7 +231,7 @@
         <li class="waves-effect"><a href="Thingstodo.html">4</a></li>
         <li class="waves-effect"><a href="traveltips.html">5</a></li>
         <li class="waves-effect"><a href="contact.html">6</a></li>
-        <li class="active teal lighten-2 black-text"><a href="aboutus.html">7</a></li>
+        <li class="active teal lighten-2 black-text"><a href="AboutUs.html">7</a></li>
     </ul>
 
 </body>
