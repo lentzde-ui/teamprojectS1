@@ -335,24 +335,119 @@
 <body>
 
   <!-- Top Navigation & Header -->
-  <header class="site-header">
-    <div class="container">
-      <nav class="top-nav">
-        <a href="index.html">Home</a>
-        <a href="restaurants.html">Restaurants</a>
-        <a href="thingstodo.html">Things To Do</a>
-        <a href="traveltips.html">Travel Tips</a>
-        <a href="costs.html">Costs</a>
-        <a href="aboutus.html">About Us</a>
-        <a href="contact.html" class="active">Contact Us</a>
-      </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ireland Travel | About Us</title>
+    <link rel="stylesheet" href="thingstodo.css">
+    <link rel="stylesheet" href="global.css">
+    <!-- Google Fonts & Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Materialize CSS & JavaScript -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-      <div class="header-titles">
-        <h1>Contact Us</h1>
-        <p class="subtitle">Get in touch with Team Ctrl Alt Elite</p>
-      </div>
-    </div>
-  </header>
+    <style>
+        /* Responsive Desktop Height & Framing Fixes */
+        @media only screen and (min-width: 993px) {
+            .slider, 
+            .slider .slides {
+                height: 550px !important; /* Expands height on desktop to fit portrait photos */
+            }
+        }
+
+        .slider .slides {
+            background-color: #004d40; /* Dark teal background fill */
+        }
+
+        .slider .slides li img {
+            object-fit: cover !important; /* Fills slide without stretching */
+            object-position: center 20% !important; /* Aligns photos near the top so faces aren't cut off */
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        /* Bottom Caption Styling with Contrast Overlay */
+        .slider .slides li .caption {
+            top: auto !important;
+            bottom: 35px !important; /* Positions text neatly at the bottom */
+            background: rgba(0, 0, 0, 0.65); /* Dark background overlay for clear text reading */
+            border-radius: 8px;
+            padding: 12px 24px;
+            display: inline-block;
+        }
+
+        .slider .indicators {
+            z-index: 10; /* Ensures indicator dots sit on top of captions */
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Materialize JS Feature 1: Sidenav Initialization
+            var sidenavElems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sidenavElems);
+
+            // Materialize JS Feature 2: Slider (2-second automated transition)
+            var sliderElems = document.querySelectorAll('.slider');
+            M.Slider.init(sliderElems, {
+                indicators: true,
+                height: 550, // Matches CSS desktop height
+                duration: 500,
+                interval: 2000 // Slides every 2 seconds
+            });
+
+            // Materialize JS Feature 3: Collapsible (Interactive Accordion)
+            var collapsibleElems = document.querySelectorAll('.collapsible');
+            M.Collapsible.init(collapsibleElems);
+
+            // Materialize JS Feature 4: Tooltips
+            var tooltipElems = document.querySelectorAll('.tooltipped');
+            M.Tooltip.init(tooltipElems);
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="navbar-fixed">
+            <nav class="teal darken-1">
+                <div class="nav-wrapper container">
+                    <!-- Brand Logo with Icon -->
+                    <a href="index.html" class="brand-logo valign-wrapper">
+                        <i class="material-icons left">explore</i>Explore Ireland
+                    </a>
+                    <!-- Mobile Hamburger Trigger -->
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <!-- Desktop Navigation Links -->
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="costs.html">Cost</a></li>
+                        <li><a href="restaurants.html">Restaurants</a></li>
+                        <li><a href="Thingstodo.html">Things to Do</a></li>
+                        <li><a href="traveltips.html">Travel Tips</a></li>
+                        <li class="active"><a href="contact.html">Contact Us</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Mobile Sidenav -->
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="costs.html">Cost</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
+            <li><a href="Thingstodo.html">Things to Do</a></li>
+            <li><a href="traveltips.html">Travel Tips</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li class="active"><a href="aboutus.html">About Us</a></li>
+        </ul>
+    </header>
 
   <!-- Main Content Area -->
   <main class="container">
