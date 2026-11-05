@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | Discover Ireland</title>
+  <title>Trip Costs & Budgeting | Discover Ireland</title>
 
   <style>
     /* ==========================================================================
@@ -29,7 +29,7 @@
     }
 
     main.container {
-      padding-top: 15px;
+      padding-top: 10px;
       padding-bottom: 30px;
     }
 
@@ -82,120 +82,81 @@
     }
 
     /* ==========================================================================
-       Cards & Layout Grid
+       Cards & Section Headings
        ========================================================================== */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+    .section {
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #2e7d32;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 28px 0 16px 0;
+    }
+
+    .subsection-title {
+      color: #2e7d32;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 10px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid #ebf4ec;
     }
 
     .card {
       background-color: #ffffff;
       border: 1px solid #d4e3d4;
       border-radius: 8px;
-      padding: 24px;
+      padding: 20px 24px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
     }
 
-    .card-title-center {
-      text-align: center;
-      color: #2e7d32;
-      font-size: 1.45rem;
-      font-weight: 700;
-      margin: 0 0 12px 0;
-    }
-
-    .card-desc {
-      font-size: 0.92rem;
-      color: #444444;
-      margin-top: 0;
-      margin-bottom: 18px;
-    }
-
-    /* ==========================================================================
-       Contact Form Styling
-       ========================================================================== */
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .form-group label {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #2e7d32;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      padding: 10px 12px;
-      border: 1px solid #d0e4d0;
-      border-radius: 6px;
-      font-family: inherit;
-      font-size: 0.9rem;
-      background-color: #f9fbf9;
-      color: #333333;
-      transition: all 0.2s ease;
-      width: 100%;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #2e7d32;
-      background-color: #ffffff;
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    .submit-btn {
-      background-color: #2e7d32;
-      color: #ffffff;
-      padding: 12px;
-      border: none;
-      border-radius: 6px;
-      font-weight: 700;
+    .card p {
+      margin: 0;
       font-size: 0.95rem;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-      margin-top: 4px;
-      width: 100%;
     }
 
-    .submit-btn:hover {
-      background-color: #1b5e20;
+    /* Price Highlights */
+    .price-tag {
+      color: #2e7d32;
+      font-weight: 700;
+      font-size: 1rem;
+      margin: 4px 0 8px 0 !important;
+    }
+
+    /* Lists inside cards */
+    .card ul.expense-list {
+      padding-left: 18px;
+      margin: 8px 0 0 0;
+      color: #555555;
+      font-size: 0.88rem;
+    }
+
+    .card ul.expense-list li {
+      margin-bottom: 6px;
+    }
+
+    .card ul.expense-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .card ul.expense-list li strong {
+      color: #222222;
     }
 
     /* ==========================================================================
-       Location & Map Badge
+       Website Section Badges (Money-Saving Tips)
        ========================================================================== */
-    .map-container {
-      width: 100%;
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid #d0e4d0;
-      line-height: 0;
-      margin-bottom: 16px;
+    .site-sections-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
     }
 
-    .map-container iframe {
-      width: 100%;
-      height: 230px;
-      border: 0;
-    }
-
-    .location-badge {
+    .section-badge {
       background-color: #f3f8f3;
       border: 1px solid #d0e4d0;
       border-left: 4px solid #2e7d32;
@@ -209,12 +170,98 @@
       font-weight: 700;
       color: #2e7d32;
       font-size: 0.92rem;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
     }
 
     .badge-desc {
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: #555555;
+    }
+
+    /* ==========================================================================
+       Grids & Feature Cards
+       ========================================================================== */
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Image Cards */
+    .image-card {
+      margin: 0;
+      background: #ffffff;
+      border: 1px solid #d4e3d4;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-card figcaption {
+      padding: 16px;
+    }
+
+    .image-card p {
+      margin: 6px 0 0 0;
+      font-size: 0.88rem;
+    }
+
+    /* Heading Colors */
+    .card-title-green {
+      color: #2e7d32;
+      font-size: 1.05rem;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .card-title-blue {
+      color: #2b6cb0;
+      font-size: 1.02rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 6px;
+    }
+
+    .feature-card p,
+    .nav-card p {
+      margin: 0;
+      font-size: 0.86rem;
+      color: #444444;
+    }
+
+    .nav-card {
+      text-decoration: none;
+      display: block;
+    }
+
+    .nav-card:hover {
+      background-color: #f9fdf9;
+      border-color: #bce0bc;
+    }
+
+    /* Sources List */
+    .sources-section ul {
+      padding-left: 20px;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .sources-section li {
+      margin-bottom: 6px;
     }
 
     /* ==========================================================================
@@ -318,7 +365,10 @@
 
     /* Responsive Mobile Adjustments */
     @media (max-width: 768px) {
-      .grid-2 {
+      .site-sections-grid {
+        grid-template-columns: 1fr;
+      }
+      .grid-2, .grid-4 {
         grid-template-columns: 1fr;
       }
       .footer-row {
@@ -342,14 +392,14 @@
         <a href="restaurants.html">Restaurants</a>
         <a href="thingstodo.html">Things To Do</a>
         <a href="traveltips.html">Travel Tips</a>
-        <a href="costs.html">Costs</a>
+        <a href="costs.html" class="active">Costs</a>
         <a href="aboutus.html">About Us</a>
-        <a href="contact.html" class="active">Contact Us</a>
+        <a href="contact.html">Contact Us</a>
       </nav>
 
       <div class="header-titles">
-        <h1>Contact Us</h1>
-        <p class="subtitle">Get in touch with Team Ctrl Alt Elite</p>
+        <h1>Trip Costs & Budgeting</h1>
+        <p class="subtitle">Plan Your Expenses for the Emerald Isle</p>
       </div>
     </div>
   </header>
@@ -357,62 +407,182 @@
   <!-- Main Content Area -->
   <main class="container">
 
-    <div class="grid-2">
-
-      <!-- Left Card: Contact Form -->
+    <!-- Introduction Card -->
+    <section class="section">
       <div class="card">
-        <h2 class="card-title-center">Send Us a Message</h2>
-        <p class="card-desc">Have questions or suggestions about our Ireland travel guide? Fill out the form below!</p>
-
-        <form class="contact-form" action="#" method="post">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-          </div>
-
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn">Send Message</button>
-        </form>
+        <p>Planning a budget for Ireland depends on your travel style, accommodations, and itinerary choices. The currency used in Ireland (Republic of Ireland) is the <strong>Euro (€)</strong>, while Northern Ireland uses the <strong>Pound Sterling (£)</strong>. Understanding typical travel costs ahead of time ensures you can experience everything Ireland has to offer without unexpected financial surprises.</p>
       </div>
+    </section>
 
-      <!-- Right Card: Location & Map -->
-      <div class="card">
-        <h2 class="card-title-center">Our Location</h2>
-        <p class="card-desc">We are based out of Oxford, Ohio at Miami University.</p>
+    <!-- Daily Budget Tiers -->
+    <section class="section">
+      <h2 class="section-title">Estimated Daily Budgets</h2>
 
-        <!-- Interactive Google Map Embed -->
-        <div class="map-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12351.488344186596!2d-84.7431267!3d39.5097486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88403d1544253303%3A0x6a05e26715f074d2!2sMiami%20University!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Miami University Oxford Ohio Map">
-          </iframe>
+      <div class="grid grid-4">
+        <div class="card feature-card">
+          <h3 class="card-title-blue">Budget Backpacker</h3>
+          <p class="price-tag">€70 – €100 / day</p>
+          <p>Hostel dorm beds, public bus travel, self-catering or casual pub meals, and free outdoor attractions.</p>
         </div>
 
-        <!-- Location Callout Badge -->
-        <div class="location-badge">
-          <span class="badge-title">Project Team: Ctrl Alt Elite</span>
-          <span class="badge-desc">Location Hub: Oxford, Ohio</span>
+        <div class="card feature-card">
+          <h3 class="card-title-blue">Mid-Range Traveler</h3>
+          <p class="price-tag">€160 – €260 / day</p>
+          <p>3-star hotels or cozy B&Bs, rented car or train rides, sit-down lunches and dinners, and paid site entry tickets.</p>
+        </div>
+
+        <div class="card feature-card">
+          <h3 class="card-title-blue">Luxury Travel</h3>
+          <p class="price-tag">€380+ / day</p>
+          <p>4-star/5-star boutique hotels or historic castle stays, fine dining restaurants, private guided tours, and car rentals with full insurance.</p>
+        </div>
+
+        <div class="card feature-card">
+          <h3 class="card-title-blue">Family Travel</h3>
+          <p class="price-tag">€300 – €450 / day</p>
+          <p>Family suites or Airbnb rentals, self-driving van rentals, child discounts on attractions, and combination dining options.</p>
         </div>
       </div>
+    </section>
 
-    </div>
+    <!-- Detailed Expense Breakdown Grid -->
+    <section class="section">
+      <h2 class="section-title">Key Trip Expense Categories</h2>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h3 class="subsection-title">Accommodation Costs</h3>
+          <p>Accommodation is often the largest portion of a travel budget in Ireland:</p>
+          <ul class="expense-list">
+            <li><strong>Hostels:</strong> €25 – €50 per night for a dorm bed in Dublin; €20 – €35 in smaller towns.</li>
+            <li><strong>Bed & Breakfasts (B&Bs):</strong> €80 – €140 per night for double rooms including traditional breakfast.</li>
+            <li><strong>Mid-Range Hotels:</strong> €130 – €240 per night depending on location and season.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="subsection-title">Food & Dining Costs</h3>
+          <p>Meals range from quick deli sandwiches to traditional pub dinners:</p>
+          <ul class="expense-list">
+            <li><strong>Deli Counter Lunch:</strong> €6 – €10 for a fresh chicken roll, soup, or sandwich.</li>
+            <li><strong>Pub Dinner:</strong> €16 – €25 for classic Irish stew, fish and chips, or a burger.</li>
+            <li><strong>Pint of Guinness:</strong> €5.50 – €8.00 depending on city and pub location.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="subsection-title">Transportation Costs</h3>
+          <p>Navigating between cities and rural scenic routes:</p>
+          <ul class="expense-list">
+            <li><strong>Car Rental:</strong> €30 – €70 per day (gas/petrol & manual vs automatic transmission affects rates).</li>
+            <li><strong>Intercity Trains (Irish Rail):</strong> €15 – €35 single fare when booked online in advance.</li>
+            <li><strong>City Transport:</strong> €2 – €3 per bus or tram ride using a Leap Card discount pass.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="subsection-title">Attractions & Sightseeing</h3>
+          <p>Entry fees for top historical and natural landmarks:</p>
+          <ul class="expense-list">
+            <li><strong>Cliffs of Moher:</strong> €7 – €12 (cheaper when reserved online in advance).</li>
+            <li><strong>Blarney Castle & Gardens:</strong> €18 – €22 adult entry.</li>
+            <li><strong>OPW Heritage Pass:</strong> €40 adult pass giving access to over 40 national monuments.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights & Visual Guides -->
+    <section class="section">
+      <h2 class="section-title">Smart Budgeting Insights</h2>
+
+      <div class="grid grid-2">
+        <figure class="image-card">
+          <img src="https://images.unsplash.com/photo-1549918864-48ac978761a4?auto=format&fit=crop&w=800&q=80" alt="Public Transport and City Street in Dublin">
+          <figcaption>
+            <strong class="card-title-green">Getting Around Efficiently</strong>
+            <p>Save money on city buses and regional trains by using public transit options. Plan routes and calculate discounts on the official <a href="https://www.transportforireland.ie" target="_blank" rel="noopener">Transport for Ireland Portal</a>.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&w=800&q=80" alt="Cozy Irish Countryside Accommodation">
+          <figcaption>
+            <strong class="card-title-green">Irish B&Bs & Local Stays</strong>
+            <p>Staying at family-run Bed & Breakfasts outside major city centers provides genuine hospitality, authentic breakfasts, and lower night rates during shoulder seasons.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Budgeting Advice & Tips -->
+    <section class="section">
+      <h2 class="section-title">Top Money-Saving Tips for Ireland</h2>
+
+      <div class="card">
+        <div class="site-sections-grid">
+          <div class="section-badge">
+            <span class="badge-title">1. Travel Shoulder Season</span>
+            <span class="badge-desc">Visit in April–May or September–October for lower flight rates and cheaper lodging.</span>
+          </div>
+
+          <div class="section-badge">
+            <span class="badge-title">2. Get an OPW Heritage Card</span>
+            <span class="badge-desc">Offers unlimited access to state-managed castles, national parks, and historic sites.</span>
+          </div>
+
+          <div class="section-badge">
+            <span class="badge-title">3. Buy a Visitor Leap Card</span>
+            <span class="badge-desc">Saves up to 30% on Dublin Bus, Luas trams, and DART trains compared to cash fares.</span>
+          </div>
+
+          <div class="section-badge">
+            <span class="badge-title">4. Lunch Specials & Early Birds</span>
+            <span class="badge-desc">Many restaurants offer lower-priced lunch or "Early Bird" set menus before 6:30 PM.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page Navigation Grid -->
+    <section class="section">
+      <h2 class="section-title">Explore Our Guide</h2>
+
+      <div class="grid grid-4">
+        <a href="index.html" class="card nav-card">
+          <h3 class="card-title-green">Home</h3>
+          <p>Overview, site guide, & main Ireland overview</p>
+        </a>
+
+        <a href="restaurants.html" class="card nav-card">
+          <h3 class="card-title-green">Restaurants</h3>
+          <p>Where to eat and drink across Ireland</p>
+        </a>
+
+        <a href="thingstodo.html" class="card nav-card">
+          <h3 class="card-title-green">Things To Do</h3>
+          <p>Top attractions, tours, and outdoor activities</p>
+        </a>
+
+        <a href="traveltips.html" class="card nav-card">
+          <h3 class="card-title-green">Travel Tips</h3>
+          <p>Essential advice for a seamless journey</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Sources Section -->
+    <section class="section sources-section">
+      <h3 class="section-title">Sources & Citations</h3>
+
+      <div class="card">
+        <ul>
+          <li>Transport for Ireland Fare & Route Guide: <a href="https://www.transportforireland.ie" target="_blank" rel="noopener">transportforireland.ie</a></li>
+          <li>Heritage Ireland Heritage Card Information: <a href="https://opw.heritageireland.ie" target="_blank" rel="noopener">heritageireland.ie</a></li>
+          <li>Tourism Ireland Official Budget & Travel Guide: <a href="https://www.ireland.com" target="_blank" rel="noopener">ireland.com</a></li>
+        </ul>
+      </div>
+    </section>
 
   </main>
 
@@ -448,12 +618,12 @@
   <!-- Group Member Pagination -->
   <ul class="pagination center-align teal darken-1">
     <li><a href="index.html">1</a></li>
-    <li><a href="costs.html">2</a></li>
+    <li class="active"><a href="costs.html">2</a></li>
     <li><a href="restaurants.html">3</a></li>
     <li><a href="thingstodo.html">4</a></li>
     <li><a href="traveltips.html">5</a></li>
     <li><a href="aboutus.html">6</a></li>
-    <li class="active"><a href="contact.html">7</a></li>
+    <li><a href="contact.html">7</a></li>
   </ul>
 
 </body>
