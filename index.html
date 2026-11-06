@@ -1,390 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+ 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discover Ireland | Ctrl Alt Elite</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ireland Travel | Things to Do</title>
+    <link rel="stylesheet" href="thingstodo.css">
+    <link rel="stylesheet" href="global.css">
+    
+    <!-- Google Fonts & Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Materialize CSS, jQuery, and Materialize JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-  <style>
-    /* ==========================================================================
-       Global & Background Setup (Light Sage Green Theme)
-       ========================================================================== */
-    * {
-      box-sizing: border-box;
-    }
+    <style>
+        /* Video Sizing & Black Box Removal */
+        .video-wrapper {
+            max-width: 650px;
+            width: 100%;
+            margin: 20px auto;
+        }
+        .video-container {
+            background-color: transparent !important; /* Removes Materialize default black background */
+        }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #ebf4ec;
-      color: #333333;
-      margin: 0;
-      padding: 0;
-      line-height: 1.5;
-    }
+        /* Equal Height Attraction Cards */
+        .row.equal-height-cards {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .row.equal-height-cards > .col {
+            display: flex;
+        }
+        .row.equal-height-cards .card {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .row.equal-height-cards .card .card-image img {
+            height: 200px; /* Standardized height for all card images */
+            object-fit: cover;
+        }
+        .row.equal-height-cards .card .card-content {
+            flex-grow: 1; /* Stretches text content to equalize heights */
+        }
+    </style>
 
-    .container {
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    main.container {
-      padding-top: 10px;
-      padding-bottom: 30px;
-    }
-
-    a {
-      color: #2b6cb0;
-      text-decoration: underline;
-    }
-
-    a:hover {
-      color: #1a4971;
-    }
-
-    /* ==========================================================================
-       Top Navigation & Header
-       ========================================================================== */
-    .site-header {
-      padding: 24px 0 16px 0;
-      text-align: center;
-    }
-
-    .top-nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 18px;
-    }
-
-    .top-nav a {
-      color: #2b6cb0;
-      font-size: 0.95rem;
-      text-decoration: underline;
-    }
-
-    .top-nav a.active {
-      font-weight: bold;
-    }
-
-    .header-titles h1 {
-      font-size: 2.25rem;
-      font-weight: 800;
-      color: #111111;
-      margin: 0 0 4px 0;
-    }
-
-    .header-titles .subtitle {
-      font-size: 1.05rem;
-      color: #555555;
-      margin: 0;
-    }
-
-    /* ==========================================================================
-       Cards & Section Headings
-       ========================================================================== */
-    .section {
-      margin-bottom: 24px;
-    }
-
-    .section-title {
-      text-align: center;
-      color: #2e7d32;
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin: 28px 0 16px 0;
-    }
-
-    .subsection-title {
-      color: #2e7d32;
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
-
-    .card {
-      background-color: #ffffff;
-      border: 1px solid #d4e3d4;
-      border-radius: 8px;
-      padding: 20px 24px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
-    }
-
-    .card p {
-      margin: 0;
-      font-size: 0.95rem;
-    }
-
-    /* ==========================================================================
-       Website Section Badges (3 Top / 2 Bottom Grid)
-       ========================================================================== */
-    .site-sections-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    .section-badge {
-      background-color: #f3f8f3;
-      border: 1px solid #d0e4d0;
-      border-radius: 6px;
-      padding: 12px 14px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .badge-title {
-      font-weight: 700;
-      color: #2e7d32;
-      font-size: 0.92rem;
-      margin-bottom: 4px;
-    }
-
-    .badge-desc {
-      font-size: 0.82rem;
-      color: #555555;
-    }
-
-    /* ==========================================================================
-       Grids & Feature Cards
-       ========================================================================== */
-    .grid {
-      display: grid;
-      gap: 16px;
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .grid-4 {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    /* Image Cards */
-    .image-card {
-      margin: 0;
-      background: #ffffff;
-      border: 1px solid #d4e3d4;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .image-card img {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .image-card figcaption {
-      padding: 16px;
-    }
-
-    .image-card p {
-      margin: 6px 0 0 0;
-      font-size: 0.88rem;
-    }
-
-    /* Heading Colors */
-    .card-title-green {
-      color: #2e7d32;
-      font-size: 1.05rem;
-      font-weight: 700;
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .card-title-blue {
-      color: #2b6cb0;
-      font-size: 1.02rem;
-      font-weight: 700;
-      margin-top: 0;
-      margin-bottom: 8px;
-    }
-
-    .feature-card p,
-    .nav-card p {
-      margin: 0;
-      font-size: 0.86rem;
-      color: #444444;
-    }
-
-    .nav-card {
-      text-decoration: none;
-      display: block;
-    }
-
-    .nav-card:hover {
-      background-color: #f9fdf9;
-      border-color: #bce0bc;
-    }
-
-    /* ==========================================================================
-       Video Embed & Sources
-       ========================================================================== */
-    .text-center-card {
-      text-align: center;
-    }
-
-    .video-desc {
-      margin-top: 0;
-      margin-bottom: 16px;
-      font-size: 0.95rem;
-    }
-
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .sources-section ul {
-      padding-left: 20px;
-      margin: 0;
-      font-size: 0.9rem;
-    }
-
-    .sources-section li {
-      margin-bottom: 6px;
-    }
-
-    /* ==========================================================================
-       Group Member Footer & Pagination
-       ========================================================================== */
-    footer.page-footer.teal.darken-1 {
-      background-color: #00695c;
-      color: #ffffff;
-      padding: 30px 0 0 0;
-      margin-top: 40px;
-    }
-
-    .footer-container {
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 24px;
-    }
-
-    .footer-col.left-col {
-      width: 55%;
-    }
-
-    .footer-col.right-col {
-      width: 35%;
-    }
-
-    .white-text {
-      color: #ffffff;
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin: 0 0 10px 0;
-    }
-
-    .grey-text {
-      color: #e0f2f1;
-      font-size: 0.92rem;
-      margin: 0;
-    }
-
-    .footer-col ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-col ul li {
-      margin-bottom: 4px;
-    }
-
-    .footer-col ul li a {
-      color: #e0f2f1;
-      text-decoration: underline;
-      font-size: 0.9rem;
-    }
-
-    .footer-copyright {
-      background-color: #004d40;
-      padding: 12px 0;
-      font-size: 0.88rem;
-      color: #ffffff;
-    }
-
-    /* Group Pagination Row */
-    ul.pagination {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      list-style: none;
-      padding: 12px 0;
-      margin: 0;
-      background-color: #00695c;
-    }
-
-    ul.pagination li {
-      margin: 0 3px;
-    }
-
-    ul.pagination li a {
-      display: block;
-      padding: 4px 12px;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 4px;
-      font-size: 0.9rem;
-    }
-
-    ul.pagination li.active {
-      background-color: #4db6ac;
-    }
-
-    ul.pagination li.active a {
-      color: #000000;
-    }
-
-    /* Responsive Mobile Adjustments */
-    @media (max-width: 768px) {
-      .site-sections-grid {
-        grid-template-columns: 1fr;
-      }
-      .grid-2, .grid-4 {
-        grid-template-columns: 1fr;
-      }
-      .footer-row {
-        flex-direction: column;
-        gap: 20px;
-      }
-      .footer-col.left-col, .footer-col.right-col {
-        width: 100%;
-      }
-    }
-  </style>
+    <script>
+        $(document).ready(function() {
+            $('.sidenav').sidenav();
+            $('.parallax').parallax();
+        });
+    </script>
 </head>
 
 <body>
 
-  <!-- Top Navigation & Header -->
-  <header>
+    <!-- Navigation Header -->
+    <header>
         <div class="navbar-fixed">
             <nav class="teal darken-1">
                 <div class="nav-wrapper container">
@@ -399,10 +78,10 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="costs.html">Cost</a></li>
                         <li><a href="restaurants.html">Restaurants</a></li>
-                        <li><a href="Thingstodo.html">Things to Do</a></li>
+                        <li class="active"><a href="Thingstodo.html">Things to Do</a></li>
                         <li><a href="traveltips.html">Travel Tips</a></li>
-                        <li class="active"><a href="contact.html">Contact Us</a></li>
                         <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
             </nav>
@@ -410,13 +89,13 @@
 
         <!-- Mobile Sidenav -->
         <ul class="sidenav" id="mobile-demo">
-            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="costs.html">Cost</a></li>
             <li><a href="restaurants.html">Restaurants</a></li>
-            <li><a href="Thingstodo.html">Things to Do</a></li>
+            <li class="active"><a href="Thingstodo.html">Things to Do</a></li>
             <li><a href="traveltips.html">Travel Tips</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
         </ul>
     </header>
 
