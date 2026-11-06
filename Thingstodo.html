@@ -1,199 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
+ 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Things to Do | Discover Ireland</title>
-  <!-- CSS imports -->
-  <link rel="stylesheet" href="global.css">
-  <link rel="stylesheet" href="homepage.css">
-  <link rel="stylesheet" href="thingstodo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ireland Travel | Things to Do</title>
+    <link rel="stylesheet" href="thingstodo.css">
+    <link rel="stylesheet" href="global.css">
+    
+    <!-- Google Fonts & Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Materialize CSS, jQuery, and Materialize JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <style>
+        /* Video Sizing & Black Box Removal */
+        .video-wrapper {
+            max-width: 650px;
+            width: 100%;
+            margin: 20px auto;
+        }
+        .video-container {
+            background-color: transparent !important; /* Removes Materialize default black background */
+        }
+
+        /* Equal Height Attraction Cards */
+        .row.equal-height-cards {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .row.equal-height-cards > .col {
+            display: flex;
+        }
+        .row.equal-height-cards .card {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .row.equal-height-cards .card .card-image img {
+            height: 200px; /* Standardized height for all card images */
+            object-fit: cover;
+        }
+        .row.equal-height-cards .card .card-content {
+            flex-grow: 1; /* Stretches text content to equalize heights */
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            $('.sidenav').sidenav();
+            $('.parallax').parallax();
+        });
+    </script>
 </head>
+
 <body>
 
-  <!-- Header & Navigation Section -->
-  <header class="teal-header">
-    <div class="header-content">
-
-      <!-- Centered Navigation Menu -->
-      <nav class="centered-nav">
-        <a href="homepage.html">Home</a>
-        <a href="restaurants.html">Restaurants</a>
-        <a href="costs.html">Costs</a>
-        <a href="Thingstodo.html" class="active">Things To Do</a>
-        <a href="traveltips.html">Travel Tips</a>
-      </nav>
-
-      <!-- Main Page Title -->
-      <div class="header-title-block">
-        <h1>Things to Do in Ireland</h1>
-        <p class="subtitle">Explore Majestic Coastlines, Ancient Castles, and Mountain Trails</p>
-      </div>
-
-    </div>
-  </header>
-
-  <main class="container">
-
-    <!-- Featured Video Section -->
-    <section class="section">
-      <div class="card video-card">
-        <h2 class="section-title" style="margin-bottom: 16px;">Experience the Emerald Isle</h2>
-        <div class="video-wrapper">
-          <iframe 
-            src="https://www.youtube-nocookie.com/embed/uczmbkmIFNw?autoplay=1&mute=1&loop=1&playlist=uczmbkmIFNw&controls=1&rel=0" 
-            title="Discover Ireland Video" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- Handpicked Attractions Section -->
-    <section class="section">
-      <h2 class="section-title">Must-Visit Attractions</h2>
-      <p class="section-subtitle">Top handpicked destinations for your Irish journey</p>
-      
-      <div class="grid grid-2">
-
-        <!-- Card 1: Giant's Causeway -->
-        <div class="card attraction-card">
-          <div class="card-image">
-            <img src="Giant%E2%80%99s%20Causeway.jpeg" alt="Giant's Causeway">
-            <span class="badge badge-coastal">Coastal</span>
-          </div>
-          <div class="card-body">
-            <h3>Visit the Giant’s Causeway</h3>
-            <p>Walk among thousands of interlocking basalt columns formed by ancient volcanic activity along Northern Ireland's northern coastline.</p>
-            <a href="https://www.nationaltrust.org.uk/visit/northern-ireland/giants-causeway" target="_blank" rel="noopener noreferrer" class="card-link">
-              Visit Official Website
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </a>
-          </div>
+    <!-- Navigation Header -->
+    <header>
+        <div class="navbar-fixed">
+            <nav class="teal darken-1">
+                <div class="nav-wrapper container">
+                    <!-- Brand Logo with Icon -->
+                    <a href="index.html" class="brand-logo valign-wrapper">
+                        <i class="material-icons left">explore</i>Explore Ireland
+                    </a>
+                    <!-- Mobile Hamburger Trigger -->
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <!-- Desktop Navigation Links -->
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="costs.html">Cost</a></li>
+                        <li><a href="restaurants.html">Restaurants</a></li>
+                        <li class="active"><a href="Thingstodo.html">Things to Do</a></li>
+                        <li><a href="traveltips.html">Travel Tips</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
 
-        <!-- Card 2: Cliffs of Moher -->
-        <div class="card attraction-card">
-          <div class="card-image">
-            <img src="Cliffs.jpg" alt="Cliffs of Moher">
-            <span class="badge badge-coastal">Coastal</span>
-          </div>
-          <div class="card-body">
-            <h3>Explore Cliffs of Moher</h3>
-            <p>Experience dramatic soaring sea cliffs rising over 700 feet above the crashing Atlantic waves in County Clare.</p>
-            <a href="https://www.cliffsofmoher.ie/" target="_blank" rel="noopener noreferrer" class="card-link">
-              Explore Location
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 3: Blarney Castle -->
-        <div class="card attraction-card">
-          <div class="card-image">
-            <img src="BlarneyCastle.jpg" alt="Blarney Castle & Gardens">
-            <span class="badge badge-history">Historical</span>
-          </div>
-          <div class="card-body">
-            <h3>Blarney Castle & Gardens</h3>
-            <p>Kiss the legendary Blarney Stone to gain the gift of eloquence and wander through lush botanical gardens.</p>
-            <a href="https://blarneycastle.ie/" target="_blank" rel="noopener noreferrer" class="card-link">
-              Visit Official Website
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 4: Mourne Wall -->
-        <div class="card attraction-card">
-          <div class="card-image">
-            <img src="Wall.jpg" alt="Mourne Wall">
-            <span class="badge badge-hiking">Hiking</span>
-          </div>
-          <div class="card-body">
-            <h3>Hike the Mourne Wall</h3>
-            <p>Trek alongside a historic 22-mile stone wall winding over 15 mountain peaks in the Mourne Mountains.</p>
-            <a href="https://www.alltrails.com/trail/northern-ireland/ards-and-north-down/mourne-wall-challenge" target="_blank" rel="noopener noreferrer" class="card-link">
-              View Trail Map
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Activity Categories -->
-    <section class="section">
-      <h2 class="section-title">Popular Activity Types</h2>
-      <div class="card">
-        <div class="site-sections-grid">
-          <div class="section-badge">
-            <span class="badge-title">🏰 Castles & Heritage</span>
-            <span class="badge-desc">Discover medieval fortresses, ancient ruins, and heritage sites dating back thousands of years.</span>
-          </div>
-          <div class="section-badge">
-            <span class="badge-title">🥾 Coastal & Mountain Hiking</span>
-            <span class="badge-desc">Traverse scenic cliff paths, national park trails, and mountain ranges across the island.</span>
-          </div>
-          <div class="section-badge">
-            <span class="badge-title">🌊 Wild Atlantic Way</span>
-            <span class="badge-desc">Drive along 1,500 miles of spectacular coastal roads with panoramic ocean views.</span>
-          </div>
-          <div class="section-badge">
-            <span class="badge-title">🎶 Music & Cultural Tours</span>
-            <span class="badge-desc">Immerse yourself in live traditional music sessions, literary tours, and storytelling.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Page Navigation Grid -->
-    <section class="section">
-      <h2 class="section-title">Explore Our Guide</h2>
-      <div class="grid grid-4">
-        <a href="homepage.html" class="card nav-card">
-          <h3>Home</h3>
-          <p>Overview, highlights, and site guide</p>
-        </a>
-        <a href="restaurants.html" class="card nav-card">
-          <h3>Restaurants</h3>
-          <p>Local dining, pub culture, & traditional foods</p>
-        </a>
-        <a href="costs.html" class="card nav-card">
-          <h3>Costs</h3>
-          <p>Trip expenses & budgeting advice</p>
-        </a>
-        <a href="travel-tips.html" class="card nav-card">
-          <h3>Travel Tips</h3>
-          <p>Essential guidance for a seamless trip</p>
-        </a>
-      </div>
-    </section>
-
-    <!-- Sources Section -->
-    <section class="section sources-section">
-      <h3 class="section-title">Sources & Citations</h3>
-      <div class="card">
-        <ul>
-          <li>National Trust Giant's Causeway: <a href="https://www.nationaltrust.org.uk/visit/northern-ireland/giants-causeway" target="_blank" rel="noopener">nationaltrust.org.uk</a></li>
-          <li>Cliffs of Moher Visitor Experience: <a href="https://www.cliffsofmoher.ie/" target="_blank" rel="noopener">cliffsofmoher.ie</a></li>
-          <li>Blarney Castle & Gardens: <a href="https://blarneycastle.ie/" target="_blank" rel="noopener">blarneycastle.ie</a></li>
-          <li>AllTrails Mourne Wall Challenge Guide: <a href="https://www.alltrails.com/trail/northern-ireland/ards-and-north-down/mourne-wall-challenge" target="_blank" rel="noopener">alltrails.com</a></li>
+        <!-- Mobile Sidenav -->
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="costs.html">Cost</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
+            <li class="active"><a href="Thingstodo.html">Things to Do</a></li>
+            <li><a href="traveltips.html">Travel Tips</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
         </ul>
-      </div>
+    </header>
+
+    <!-- Hero Banner with Video -->
+    <section class="hero container center-align" style="margin-top: 20px;">
+        <div class="hero-content">
+            <h1>Discover Ireland</h1>
+            <p>Explore majestic coastlines, ancient medieval castles, and iconic mountain trails across the Emerald Isle.</p>
+
+            <!-- Featured Video Embed -->
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <iframe width="560" 
+                            height="315" 
+                            src="https://www.youtube.com/embed/jgMDAnrtfqs?autoplay=1&mute=1&loop=1&playlist=jgMDAnrtfqs" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <a href="#Attract" class="btn btn-primary teal darken-1" style="margin-top: 15px;">Explore Destinations</a>
+        </div>
     </section>
 
-  </main>
+    <!-- Attraction Directory Section -->
+    <section class="section" id="Attract">
+        <div style="width: 95%; margin: 0 auto;">
+            <h4 class="header center-align">Attraction Directory</h4>
+            
+            <div class="row equal-height-cards">
+                <!-- Attraction Card 1 -->
+                <div class="col s12 m6 l3">
+                    <div class="card center-align">
+                        <div class="card-image">
+                            <img src="BlarneyCastle.jpg" alt="Blarney Castle">
+                            <span class="card-title">Blarney Castle</span>
+                        </div>
+                        <div class="card-content">
+                            <p>A world-famous landmark in County Cork known for its stone of eloquence and lush grounds.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://blarneycastle.ie/">Details</a>
+                        </div>
+                    </div>
+                </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <p>&copy; 2026 Travel Destination Project | Team Ctrl Alt Elite</p>
-      <p>Discover Ireland: Your guide to exploring the Emerald Isle.</p>
-    </div>
-  </footer>
+                <!-- Attraction Card 2 -->
+                <div class="col s12 m6 l3">
+                    <div class="card center-align">
+                        <div class="card-image">
+                            <img src="Cliffs.jpg" alt="Cliffs of Moher">
+                            <span class="card-title">Cliffs of Moher</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Stretching for 14 kilometers, these magnificent sea cliffs offer unforgettable ocean vistas.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://www.ireland.com/en-us/things-to-do/attractions/cliffs-of-moher/">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attraction Card 3 -->
+                <div class="col s12 m6 l3">
+                    <div class="card center-align">
+                        <div class="card-image">
+                            <img src="Giant's Causeway.jpeg" alt="Giant's Causeway">
+                            <span class="card-title">Giant's Causeway</span>
+                        </div>
+                        <div class="card-content">
+                            <p>An area of around 40,000 interlocking basalt columns created by ancient volcanic activity.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://blarneycastle.ie/">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attraction Card 4 -->
+                <div class="col s12 m6 l3">
+                    <div class="card center-align">
+                        <div class="card-image">
+                            <img src="Cliffs.jpg" alt="Hike the Mourne Wall">
+                            <span class="card-title">Hike the Mourne Wall</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Immerse yourself in history with guided walks along preserved historical stone ramparts.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://www.alltrails.com/trail/northern-ireland/ards-and-north-down/mourne-wall-challenge">Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="page-footer teal darken-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Explore Ireland</h5>
+                    <p class="grey-text text-lighten-4">See other helpful tips for traveling to Ireland.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="index.html">Home</a></li>
+                        <li><a class="grey-text text-lighten-3" href="costs.html">Cost</a></li>
+                        <li><a class="grey-text text-lighten-3" href="restaurants.html">Restaurants</a></li>
+                        <li><a class="grey-text text-lighten-3" href="Thingstodo.html">Things To Do</a></li>
+                        <li><a class="grey-text text-lighten-3" href="traveltips.html">Travel Tips</a></li>
+                        <li><a class="grey-text text-lighten-3" href="contact.html">Contact Us</a></li>
+                        <li><a class="grey-text text-lighten-3" href="aboutus.html">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2026 Control Alt Elite, All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Pagination -->
+    <ul class="pagination center-align teal darken-1 black-text">
+        <li class="waves-effect"><a href="index.html">1</a></li>
+        <li class="waves-effect"><a href="costs.html">2</a></li>
+        <li class="waves-effect"><a href="restaurants.html">3</a></li>
+        <li class="active teal lighten-2 black-text"><a href="Thingstodo.html">4</a></li>
+        <li class="waves-effect"><a href="traveltips.html">5</a></li>
+        <li class="waves-effect"><a href="contact.html">6</a></li>
+        <li class="waves-effect"><a href="aboutus.html">7</a></li>
+    </ul>
 
 </body>
+
 </html>

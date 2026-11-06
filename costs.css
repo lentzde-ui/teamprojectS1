@@ -1,70 +1,141 @@
-/* ==========================================
+/* ==========================================================================
    Costs Page Custom Stylesheet (costs.css)
-   Imports shared base styles from homepage.css
-   ========================================== */
+   Imports shared styles from global.css and homepage.css
+   ========================================================================== */
 
+@import url('global.css');
 @import url('homepage.css');
 
-/* Expense Card Header Dividers */
-.card .subsection-title {
-  padding-bottom: 6px;
-  border-bottom: 2px solid var(--pastel-green-light);
-  margin-bottom: 10px;
+/* Daily Budget Price Tag Highlights */
+.price-tag {
+  color: #2e7d32;
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 4px 0 8px 0 !important;
 }
 
-/* Specific List Item Styling for Expense Breakdown Cards */
-.card ul {
-  padding-left: 20px;
-  margin-top: 8px;
-  color: var(--text-muted);
-  font-size: 0.9rem;
+/* Subtitle Header Dividers in Expense Breakdown Cards */
+.card .subsection-title {
+  color: #2e7d32;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #ebf4ec;
+}
+
+/* Expense Breakdown List Styling */
+.card ul.expense-list {
+  padding-left: 18px;
+  margin: 8px 0 0 0;
+  color: #555555;
+  font-size: 0.88rem;
   line-height: 1.5;
 }
 
-.card ul li {
+.card ul.expense-list li {
   margin-bottom: 6px;
 }
 
-.card ul li:last-child {
+.card ul.expense-list li:last-child {
   margin-bottom: 0;
 }
 
-.card ul li strong {
-  color: var(--text-main);
+.card ul.expense-list li strong {
+  color: #222222;
 }
 
-/* Feature Card Daily Budget Highlights */
-.feature-card p strong {
-  color: var(--pastel-green-dark);
-  font-size: 1rem;
+/* Money-Saving Tips 2-Column Badge Grid */
+.site-sections-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
 
-/* Section Badge Layout Adjustments */
 .section-badge {
-  background: #f3f8f4;
-  border: 1px solid #c8e6c9;
-  border-left: 4px solid var(--pastel-green-dark);
-  padding: 10px 14px;
+  background-color: #f3f8f3;
+  border: 1px solid #d0e4d0;
+  border-left: 4px solid #2e7d32;
   border-radius: 6px;
+  padding: 12px 14px;
   display: flex;
   flex-direction: column;
 }
 
 .section-badge .badge-title {
   font-weight: 700;
-  color: var(--pastel-green-dark);
+  color: #2e7d32;
   font-size: 0.92rem;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 .section-badge .badge-desc {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  font-size: 0.84rem;
+  color: #555555;
   line-height: 1.35;
 }
 
-/* Image Card Figcaption Enhancements */
+/* Image Card Figcaption Line-Height */
 .image-card figcaption p {
   line-height: 1.4;
   margin-top: 4px;
+}
+
+/* Responsive adjustment for badges on mobile screens */
+@media (max-width: 600px) {
+  .site-sections-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card ul.expense-list li:last-child {
+  margin-bottom: 0;
+}
+
+.card ul.expense-list li strong {
+  color: #222222;
+}
+
+/* Money-Saving Tips 2-Column Badge Grid */
+.site-sections-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.section-badge {
+  background-color: #f3f8f3;
+  border: 1px solid #d0e4d0;
+  border-left: 4px solid #2e7d32;
+  border-radius: 6px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-badge .badge-title {
+  font-weight: 700;
+  color: #2e7d32;
+  font-size: 0.92rem;
+  margin-bottom: 4px;
+}
+
+.section-badge .badge-desc {
+  font-size: 0.84rem;
+  color: #555555;
+  line-height: 1.35;
+}
+
+/* Image Card Figcaption Line-Height */
+.image-card figcaption p {
+  line-height: 1.4;
+  margin-top: 4px;
+}
+
+/* Responsive adjustment for badges on mobile screens */
+@media (max-width: 600px) {
+  .site-sections-grid {
+    grid-template-columns: 1fr;
+  }
 }

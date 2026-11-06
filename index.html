@@ -1,72 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discover Ireland | Ctrl Alt Elite</title>
-  <!-- CSS imports -->
-  <link rel="stylesheet" href="global.css">
-  <link rel="stylesheet" href="homepage.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ireland Travel | Home</title>
+    <link rel="stylesheet" href="thingstodo.css">
+    <link rel="stylesheet" href="global.css">
+    
+    <!-- Google Fonts & Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Materialize CSS, jQuery, and Materialize JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <style>
+        /* Video Sizing & Black Box Removal */
+        .video-wrapper {
+            max-width: 650px;
+            width: 100%;
+            margin: 20px auto;
+        }
+        .video-container {
+            background-color: transparent !important; /* Removes Materialize default black background */
+        }
+
+        /* Equal Height Attraction Cards */
+        .row.equal-height-cards {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .row.equal-height-cards > .col {
+            display: flex;
+        }
+        .row.equal-height-cards .card {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .row.equal-height-cards .card .card-image img {
+            height: 200px; /* Standardized height for all card images */
+            object-fit: cover;
+        }
+        .row.equal-height-cards .card .card-content {
+            flex-grow: 1; /* Stretches text content to equalize heights */
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            $('.sidenav').sidenav();
+            $('.parallax').parallax();
+        });
+    </script>
 </head>
+
 <body>
 
-  <!-- Header & Navigation Section -->
-  <header class="teal-header">
-    <div class="header-content">
+    <!-- Navigation Header -->
+    <header>
+        <div class="navbar-fixed">
+            <nav class="teal darken-1">
+                <div class="nav-wrapper container">
+                    <!-- Brand Logo with Icon -->
+                    <a href="index.html" class="brand-logo valign-wrapper">
+                        <i class="material-icons left">explore</i>Explore Ireland
+                    </a>
+                    <!-- Mobile Hamburger Trigger -->
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <!-- Desktop Navigation Links -->
+                    <ul class="right hide-on-med-and-down">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="costs.html">Cost</a></li>
+                        <li><a href="restaurants.html">Restaurants</a></li>
+                        <li><a href="Thingstodo.html">Things to Do</a></li>
+                        <li><a href="traveltips.html">Travel Tips</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
-      <!-- Centered Navigation Menu -->
-      <nav class="centered-nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="restaurants.html">Restaurants</a>
-        <a href="costs.html">Costs</a>
-        <a href="things-to-do.html">Things To Do</a>
-        <a href="travel-tips.html">Travel Tips</a>
-      </nav>
+        <!-- Mobile Sidenav -->
+        <ul class="sidenav" id="mobile-demo">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="costs.html">Cost</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
+            <li><a href="Thingstodo.html">Things to Do</a></li>
+            <li><a href="traveltips.html">Travel Tips</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </header>
 
-      <!-- Main Page Title -->
-      <div class="header-title-block">
-        <h1>Discover Ireland</h1>
-        <p class="subtitle">Your Guide to the Emerald Isle</p>
-      </div>
-
-    </div>
-  </header>
-
+  <!-- Main Content Area -->
   <main class="container">
 
-    <!-- Introduction Section -->
+    <!-- Introduction Card -->
     <section class="section">
       <div class="card">
         <p>Welcome to Ireland! From beautiful green landscapes and historic castles to lively cities and traditional Irish food, Ireland has something for everyone. Our website will help you plan your trip with information about where to stay, what to do, how much things cost, restaurants, and helpful travel tips.</p>
       </div>
     </section>
 
-    <!-- About Our Website & Styled Website Sections -->
+    <!-- About Our Website -->
     <section class="section">
       <h2 class="section-title">About Our Website</h2>
       <div class="card">
         <p>We created this website to help travelers discover everything Ireland has to offer. Whether you are visiting for the first time or looking for new places to explore, our goal is to make planning your trip easier. We provide information about restaurants, costs, things to do, and travel tips so you can get the most out of your visit.</p>
-        
+
         <h3 class="subsection-title">Website Sections</h3>
-        
-        <!-- Redesigned Badge Grid for Website Sections -->
+
+        <!-- Badge Grid -->
         <div class="site-sections-grid">
           <div class="section-badge">
             <span class="badge-title">Home Page & About Us</span>
             <span class="badge-desc">Overview, highlights, and site guide</span>
           </div>
+
           <div class="section-badge">
             <span class="badge-title">Restaurants</span>
             <span class="badge-desc">Dining guide & food recommendations</span>
           </div>
+
           <div class="section-badge">
             <span class="badge-title">Costs</span>
             <span class="badge-desc">Trip expenses & budgeting advice</span>
           </div>
+
           <div class="section-badge">
             <span class="badge-title">Things To Do</span>
             <span class="badge-desc">Sightseeing, tours, & activities</span>
           </div>
+
           <div class="section-badge">
             <span class="badge-title">Travel Tips</span>
             <span class="badge-desc">Essential guidance for travelers</span>
@@ -75,21 +147,23 @@
       </div>
     </section>
 
-    <!-- Highlights Section (+2 Images & Embedded Links) -->
+    <!-- Highlights Section -->
     <section class="section">
       <h2 class="section-title">Highlights of Ireland</h2>
+
       <div class="grid grid-2">
         <figure class="image-card">
           <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=800&q=80" alt="Cliffs of Moher">
           <figcaption>
-            <strong>The Cliffs of Moher</strong>
+            <strong class="card-title-green">The Cliffs of Moher</strong>
             <p>One of Ireland's most famous natural landmarks, offering breathtaking ocean views. Learn more at the <a href="https://www.cliffsofmoher.ie/" target="_blank" rel="noopener">Cliffs of Moher Visitor Experience</a>.</p>
           </figcaption>
         </figure>
+
         <figure class="image-card">
           <img src="https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?auto=format&fit=crop&w=800&q=80" alt="Irish Countryside">
           <figcaption>
-            <strong>Irish Countryside & Historic Sites</strong>
+            <strong class="card-title-green">Irish Countryside & Historic Sites</strong>
             <p>Ireland is known for its rolling green landscapes, ancient stone walls, and historic landmarks like <a href="https://blarneycastle.ie/" target="_blank" rel="noopener">Blarney Castle & Gardens</a>.</p>
           </figcaption>
         </figure>
@@ -99,21 +173,25 @@
     <!-- Why Visit Ireland Section -->
     <section class="section">
       <h2 class="section-title">Why Visit Ireland?</h2>
+
       <div class="grid grid-4">
         <div class="card feature-card">
-          <h3>Beautiful Landscapes</h3>
+          <h3 class="card-title-blue">Beautiful Landscapes</h3>
           <p>Ireland is known for its green countryside, sea cliffs, beaches, and scenic coastal views.</p>
         </div>
+
         <div class="card feature-card">
-          <h3>History & Culture</h3>
+          <h3 class="card-title-blue">History & Culture</h3>
           <p>Explore historic castles, ancient monuments, traditional music, and a rich folklore history.</p>
         </div>
+
         <div class="card feature-card">
-          <h3>Unique Experiences</h3>
+          <h3 class="card-title-blue">Unique Experiences</h3>
           <p>Visit bustling Dublin, tour the Ring of Kerry, explore ancient ruins, and meet friendly locals.</p>
         </div>
+
         <div class="card feature-card">
-          <h3>Food & Nightlife</h3>
+          <h3 class="card-title-blue">Food & Nightlife</h3>
           <p>Enjoy everything from traditional hearty Irish dishes to modern dining, cozy pubs, and live music.</p>
         </div>
       </div>
@@ -122,33 +200,43 @@
     <!-- Page Navigation Grid -->
     <section class="section">
       <h2 class="section-title">Explore Our Guide</h2>
+
       <div class="grid grid-4">
         <a href="restaurants.html" class="card nav-card">
-          <h3>Restaurants</h3>
+          <h3 class="card-title-green">Restaurants</h3>
           <p>Where to eat and drink across Ireland</p>
         </a>
+
         <a href="costs.html" class="card nav-card">
-          <h3>Costs</h3>
+          <h3 class="card-title-green">Costs</h3>
           <p>Budgeting advice & trip expense guides</p>
         </a>
-        <a href="things-to-do.html" class="card nav-card">
-          <h3>Things To Do</h3>
+
+        <a href="Thingstodo.html" class="card nav-card">
+          <h3 class="card-title-green">Things To Do</h3>
           <p>Top attractions, tours, and outdoor activities</p>
         </a>
-        <a href="travel-tips.html" class="card nav-card">
-          <h3>Travel Tips</h3>
+
+        <a href="traveltips.html" class="card nav-card">
+          <h3 class="card-title-green">Travel Tips</h3>
           <p>Essential advice for a seamless journey</p>
         </a>
       </div>
     </section>
 
-    <!-- Video Embed Section (+1 Video) -->
+    <!-- Video Embed Section -->
     <section class="section">
       <h2 class="section-title">Explore Ireland</h2>
-      <div class="card">
-        <p class="text-center">Watch this cinematic showcase to preview the stunning scenery and vibrant culture waiting for you in Ireland.</p>
+
+      <div class="card text-center-card">
+        <p class="video-desc">Watch this cinematic showcase to preview the stunning scenery and vibrant culture waiting for you in Ireland.</p>
         <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/fb0NQAx6E1k" title="Discover Ireland Travel Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/fb0NQAx6E1k"
+            title="Discover Ireland Travel Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
     </section>
@@ -156,6 +244,7 @@
     <!-- Sources Section -->
     <section class="section sources-section">
       <h3 class="section-title">Sources & Citations</h3>
+
       <div class="card">
         <ul>
           <li>Tourism Ireland Official Portal: <a href="https://www.ireland.com" target="_blank" rel="noopener">ireland.com</a></li>
@@ -167,16 +256,45 @@
 
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <p>&copy; 2026 Travel Destination Project</p>
-      <p>Discover Ireland: Your guide to exploring the Emerald Isle.</p>
+  <!-- Group Member Footer -->
+  <footer class="page-footer teal darken-1">
+    <div class="footer-container">
+      <div class="footer-row">
+        <div class="footer-col left-col">
+          <h5 class="white-text">Explore Ireland</h5>
+          <p class="grey-text">See other helpful tips for traveling to Ireland.</p>
+        </div>
+        <div class="footer-col right-col">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="costs.html">Cost</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
+            <li><a href="Thingstodo.html">Things To Do</a></li>
+            <li><a href="traveltips.html">Travel Tips</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="footer-container">
+        &copy; 2026 Control Alt Elite, All Rights Reserved.
+      </div>
     </div>
   </footer>
 
-</body>
-</html>
+  <!-- Group Member Pagination -->
+  <ul class="pagination center-align teal darken-1">
+    <li class="active"><a href="index.html">1</a></li>
+    <li><a href="costs.html">2</a></li>
+    <li><a href="restaurants.html">3</a></li>
+    <li><a href="Thingstodo.html">4</a></li>
+    <li><a href="traveltips.html">5</a></li>
+    <li><a href="aboutus.html">6</a></li>
+    <li><a href="contact.html">7</a></li>
+  </ul>
 
 </body>
 </html>
