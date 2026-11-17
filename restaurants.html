@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taste of Ireland | Discover Ireland</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="index.css">
-    
+    <!-- Google Fonts & Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="thingstodo.css">
+    <link rel="stylesheet" href="global.css">
+
     <style>
         body {
             background-color: #f4f6f4;
@@ -22,76 +30,8 @@
 
         main {
             flex: 1 0 auto;
+            padding-top: 25px;
             padding-bottom: 40px;
-        }
-
-        /* HEADER AND NAVIGATION */
-        .teal-header {
-            background-color: #e8f5e9;
-            padding: 30px 16px 35px;
-            border-bottom: 1px solid #dddddd;
-            text-align: center;
-        }
-
-        .header-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .centered-nav {
-            width: 100%;
-            height: auto;
-            line-height: normal;
-            background: transparent;
-            box-shadow: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .nav-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px 30px;
-        }
-
-        .centered-nav a {
-            color: #1a5fb3;
-            font-size: 20px;
-            font-weight: 500;
-            text-decoration: underline;
-            line-height: 1.4;
-        }
-
-        .centered-nav a:hover {
-            color: #2e7d32;
-        }
-
-        .header-title-block {
-            text-align: center;
-        }
-
-        .header-title-block h1 {
-            color: #111111;
-            font-size: 48px;
-            font-weight: 800;
-            line-height: 1.15;
-            margin: 0 0 15px;
-        }
-
-        .header-title-block p {
-            color: #444444;
-            font-size: 22px;
-            line-height: 1.5;
-            margin: 0 auto;
-            max-width: 750px;
         }
 
         /* SECTION TITLES */
@@ -220,134 +160,7 @@
             color: #1b5e20;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
-
-        /* CONTACT FORM */
-        .input-field input[type=text]:focus,
-        .input-field input[type=email]:focus,
-        .input-field textarea:focus {
-            border-bottom: 1px solid #2e7d32 !important;
-            box-shadow: 0 1px 0 0 #2e7d32 !important;
-        }
-
-        .input-field input[type=text]:focus + label,
-        .input-field input[type=email]:focus + label,
-        .input-field textarea:focus + label {
-            color: #2e7d32 !important;
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: #e8f5e9;
-            border-top: 1px solid #dddddd;
-            color: #555555;
-            padding: 24px 0;
-            text-align: center;
-            font-size: 0.88rem;
-        }
-
-        footer a {
-            color: #1a5fb3;
-            text-decoration: underline;
-        }
-
-        footer a:hover {
-            color: #2e7d32;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px 22px;
-            margin: 15px auto;
-        }
-
-        /* MOBILE DESIGN */
-        @media only screen and (max-width: 700px) {
-            .teal-header {
-                padding: 22px 12px 28px;
-            }
-
-            .header-content {
-                gap: 24px;
-            }
-
-            .nav-row {
-                gap: 13px 18px;
-            }
-
-            .centered-nav a {
-                font-size: 17px;
-            }
-
-            .header-title-block h1 {
-                font-size: 36px;
-            }
-
-            .header-title-block p {
-                font-size: 18px;
-            }
-        }
     </style>
-</head>
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ireland Travel | Home</title>
-    <link rel="stylesheet" href="thingstodo.css">
-    <link rel="stylesheet" href="global.css">
-    
-    <!-- Google Fonts & Material Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Materialize CSS, jQuery, and Materialize JS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <style>
-        /* Video Sizing & Black Box Removal */
-        .video-wrapper {
-            max-width: 650px;
-            width: 100%;
-            margin: 20px auto;
-        }
-        .video-container {
-            background-color: transparent !important; /* Removes Materialize default black background */
-        }
-
-        /* Equal Height Attraction Cards */
-        .row.equal-height-cards {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .row.equal-height-cards > .col {
-            display: flex;
-        }
-        .row.equal-height-cards .card {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
-        .row.equal-height-cards .card .card-image img {
-            height: 200px; /* Standardized height for all card images */
-            object-fit: cover;
-        }
-        .row.equal-height-cards .card .card-content {
-            flex-grow: 1; /* Stretches text content to equalize heights */
-        }
-    </style>
-
-    <script>
-        $(document).ready(function() {
-            $('.sidenav').sidenav();
-            $('.parallax').parallax();
-        });
-    </script>
 </head>
 
 <body>
@@ -388,11 +201,6 @@
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </header>
-
-<body>
-
-    <!-- HEADER AND NAVIGATION -->
-    
 
     <main class="container">
 
@@ -502,10 +310,7 @@
 
                 <div class="col s12 m6">
                     <div class="gallery-card">
-
-                        <img src="irish foood.jpeg2.jpg"
-                             alt="Traditional Irish Cuisine">
-
+                        <img src="irish foood.jpeg2.jpg" alt="Traditional Irish Cuisine">
                         <div class="card-info">
                             <h3>Traditional Irish Cuisine</h3>
                             <p>Hearty home-cooked meals featuring locally sourced potatoes, meats, and fresh vegetables cooked to perfection.</p>
@@ -515,10 +320,7 @@
 
                 <div class="col s12 m6">
                     <div class="gallery-card">
-
-                        <img src="historic irish pub j.peg.jpeg"
-                             alt="Historic Irish Pub Atmosphere">
-
+                        <img src="historic irish pub j.peg.jpeg" alt="Historic Irish Pub Atmosphere">
                         <div class="card-info">
                             <h3>Historic Irish Pub Atmosphere</h3>
                             <p>Cozy interiors, warm wooden décor, and friendly locals make pub dining a memorable cultural experience.</p>
@@ -532,10 +334,7 @@
 
                 <div class="col s12 m6">
                     <div class="gallery-card">
-
-                        <img src="irishbakes.jepg3.jpeg"
-                             alt="Irish Baked Favorites">
-
+                        <img src="irishbakes.jepg3.jpeg" alt="Irish Baked Favorites">
                         <div class="card-info">
                             <h3>Irish Baked Favorites</h3>
                             <p>Delicious freshly baked breads, pastries, and treats crafted with traditional recipes.</p>
@@ -545,10 +344,7 @@
 
                 <div class="col s12 m6">
                     <div class="gallery-card">
-
-                        <img src="irishpub.jeg.jpeg"
-                             alt="Irish Pubs">
-
+                        <img src="irishpub.jeg.jpeg" alt="Irish Pubs">
                         <div class="card-info">
                             <h3>Traditional Pubs</h3>
                             <p>Authentic local gathering spots offering classic meals, lively atmospheres, and historic charm.</p>
@@ -654,40 +450,32 @@
             </div>
         </section>
 
-       
+    </main> <!-- THIS CLOSING TAG WAS MISSING -->
 
-        
-
-                  
-
-<!-- FOOTER -->
+    <!-- FOOTER -->
     <!-- NEW Group Member Footer -->
-    <footer class="page-footer teal darken-1 left-align" style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; margin-bottom: 0; padding-bottom: 0; text-align: left;">
-        <div class="container" style="text-align: left;">
+    <footer class="page-footer teal darken-1">
+        <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text" style="font-size: 1.64rem; font-weight: 400;">Explore Ireland</h5>
+                    <h5 class="white-text">Explore Ireland</h5>
                     <p class="grey-text text-lighten-4">See other helpful tips for traveling to Ireland.</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text" style="font-size: 1.64rem; font-weight: 400;">Links</h5>
-                    <ul style="padding-left: 0; list-style: none;">
-                        <li><a class="grey-text text-lighten-3" style="text-decoration: none;" href="index.html">Home</a></li>
-                        <li><a class="grey-text text-lighten-3" style="text-decoration: none;" href="costs.html">Cost</a></li>
-                        <li><a class="grey-text text-lighten-3" style="text-decoration: none;" href="restaurants.html">Restaurants</a></li>
-                        <li><a class="grey-text text-lighten-3" style="text-decoration: none;" href="Thingstodo.html">Things To Do</a></li>
-                        <li><a class="grey-text text-lighten-3" style="text-decoration: none;" href="traveltips.html">Travel Tips</a></li>
-                        <li><a class="grey-text text-lighten-3" style="text-decoration: none;" href="aboutus.html">About Us</a></li>
-                        <li><a class="grey-text text-lighten-3" style="text-decoration: none;" href="contact.html">Contact Us</a></li>
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="index.html">Home</a></li>
+                        <li><a class="grey-text text-lighten-3" href="costs.html">Cost</a></li>
+                        <li><a class="grey-text text-lighten-3" href="restaurants.html">Restaurants</a></li>
+                        <li><a class="grey-text text-lighten-3" href="Thingstodo.html">Things To Do</a></li>
+                        <li><a class="grey-text text-lighten-3" href="traveltips.html">Travel Tips</a></li>
+                        <li><a class="grey-text text-lighten-3" href="aboutus.html">About Us</a></li>
+                        <li><a class="grey-text text-lighten-3" href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-
-        <!-- Guaranteed thin white divider line above 2026 copyright -->
-        <hr style="border: 0; border-top: 1px solid rgba(255, 255, 255, 0.35); margin: 0; width: 100%;">
-
-        <div class="footer-copyright" style="text-align: left; background-color: rgba(0, 0, 0, 0.08);">
+        <div class="footer-copyright" style="border-top: 1px solid rgba(255, 255, 255, 0.35);">
             <div class="container">
                 © 2026 Control Alt Elite, All Rights Reserved.
             </div>
@@ -695,30 +483,27 @@
     </footer>
 
     <!-- Group Member Pagination -->
-    <ul class="pagination center-align teal darken-1 black-text" style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; margin-top: 0; margin-bottom: 0; padding: 10px 0;">
-        <li class="waves-effect"><a style="text-decoration: none;" href="index.html">1</a></li>
-        <li class="waves-effect"><a style="text-decoration: none;" href="costs.html">2</a></li>
-        <li class="active teal lighten-2 black-text"><a style="text-decoration: none;" href="restaurants.html">3</a></li>
-        <li class="waves-effect"><a style="text-decoration: none;" href="Thingstodo.html">4</a></li>
-        <li class="waves-effect"><a style="text-decoration: none;" href="traveltips.html">5</a></li>
-        <li class="waves-effect"><a style="text-decoration: none;" href="contact.html">6</a></li>
-        <li class="waves-effect"><a style="text-decoration: none;" href="aboutus.html">7</a></li>
+    <ul class="pagination center-align teal darken-1 black-text" style="margin-top: 0; margin-bottom: 14px;">
+        <li class="waves-effect"><a href="index.html">1</a></li>
+        <li class="waves-effect"><a href="costs.html">2</a></li>
+        <li class="active teal lighten-2 black-text"><a href="restaurants.html">3</a></li>
+        <li class="waves-effect"><a href="Thingstodo.html">4</a></li>
+        <li class="waves-effect"><a href="traveltips.html">5</a></li>
+        <li class="waves-effect"><a href="contact.html">6</a></li>
+        <li class="waves-effect"><a href="aboutus.html">7</a></li>
     </ul>
 
-    <!-- Guaranteed white strip at the very bottom edge -->
-    <div style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; height: 14px; background-color: #ffffff;"></div>
-
-           
-
-    <!-- MATERIALIZE JAVASCRIPT -->
+    <!-- jQuery & MATERIALIZE JAVASCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
 
             var collapsibles = document.querySelectorAll('.collapsible');
             M.Collapsible.init(collapsibles);
-
         });
     </script>
 
