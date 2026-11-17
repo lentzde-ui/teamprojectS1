@@ -33,30 +33,6 @@
             padding-bottom: 40px;
         }
 
-        /* FORCE NAVBAR TO MATCH COSTS.HTML & THINGSTODO.HTML */
-        header nav {
-            text-align: left !important;
-        }
-        header nav .nav-wrapper {
-            display: block !important;
-            text-align: left !important;
-        }
-        header nav .brand-logo {
-            position: relative !important;
-            left: 0 !important;
-            transform: none !important;
-            float: left !important;
-            text-decoration: none !important;
-            display: inline-flex !important;
-            align-items: center !important;
-        }
-        header nav ul.right {
-            float: right !important;
-        }
-        header nav a {
-            text-decoration: none !important;
-        }
-
         /* SECTION TITLES */
         .section-title {
             color: #2e7d32;
@@ -191,23 +167,23 @@
     <!-- Navigation Header -->
     <header>
         <div class="navbar-fixed">
-            <nav class="teal darken-1">
-                <div class="nav-wrapper container">
+            <nav class="teal darken-1" style="display: block; text-align: left;">
+                <div class="nav-wrapper container" style="display: block; position: relative;">
                     <!-- Brand Logo with Icon -->
-                    <a href="index.html" class="brand-logo left">
+                    <a href="index.html" class="brand-logo left valign-wrapper" style="left: 0; transform: none; text-decoration: none;">
                         <i class="material-icons left">explore</i>Explore Ireland
                     </a>
                     <!-- Mobile Hamburger Trigger -->
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger" style="text-decoration: none;"><i class="material-icons">menu</i></a>
                     <!-- Desktop Navigation Links -->
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="costs.html">Cost</a></li>
-                        <li class="active"><a href="restaurants.html">Restaurants</a></li>
-                        <li><a href="Thingstodo.html">Things to Do</a></li>
-                        <li><a href="traveltips.html">Travel Tips</a></li>
-                        <li><a href="aboutus.html">About Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                    <ul class="right hide-on-med-and-down" style="float: right;">
+                        <li><a style="text-decoration: none;" href="index.html">Home</a></li>
+                        <li><a style="text-decoration: none;" href="costs.html">Cost</a></li>
+                        <li class="active"><a style="text-decoration: none;" href="restaurants.html">Restaurants</a></li>
+                        <li><a style="text-decoration: none;" href="Thingstodo.html">Things to Do</a></li>
+                        <li><a style="text-decoration: none;" href="traveltips.html">Travel Tips</a></li>
+                        <li><a style="text-decoration: none;" href="aboutus.html">About Us</a></li>
+                        <li><a style="text-decoration: none;" href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
             </nav>
@@ -224,4 +200,312 @@
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </header>
+
+    <main class="container">
+
+        <!-- INTRODUCTION -->
+        <div class="card-panel-custom intro-box">
+            <p style="margin: 0;">
+                Food is an essential part of traveling because it allows you to experience the rich culture of a new place.
+                Ireland offers a diverse food scene featuring cozy traditional pubs, bustling cafes, and innovative modern dining.
+                From hearty stews cooked in coastal villages to fresh farm-to-table cuisine in city centers, there is something delicious around every corner.
+            </p>
+        </div>
+
+        <!-- MUST-TRY TRADITIONAL DISHES -->
+        <section id="info">
+            <h2 class="section-title">Must-Try Traditional Dishes</h2>
+
+            <div class="row">
+
+                <div class="col s12 m6 l3">
+                    <div class="dish-card">
+                        <div class="dish-title">
+                            <i class="material-icons" style="font-size: 1.2rem;">restaurant</i>
+                            Irish Stew
+                        </div>
+                        <p>A classic, comforting dish made with tender lamb or beef, potatoes, carrots, onions, and a rich savory broth.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m6 l3">
+                    <div class="dish-card">
+                        <div class="dish-title">
+                            <i class="material-icons" style="font-size: 1.2rem;">free_breakfast</i>
+                            Full Irish Breakfast
+                        </div>
+                        <p>A hearty morning meal usually served with eggs, Irish bacon, sausages, baked beans, grilled tomatoes, and black and white pudding.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m6 l3">
+                    <div class="dish-card">
+                        <div class="dish-title">
+                            <i class="material-icons" style="font-size: 1.2rem;">bakery_dining</i>
+                            Irish Soda Bread
+                        </div>
+                        <p>Traditional dense bread baked using buttermilk and baking soda, served warm alongside fresh local butter or soups.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m6 l3">
+                    <div class="dish-card">
+                        <div class="dish-title">
+                            <i class="material-icons" style="font-size: 1.2rem;">set_meal</i>
+                            Fresh Local Seafood
+                        </div>
+                        <p>Surrounded by the Atlantic Ocean, Ireland is famous for wild salmon, fresh oysters, fish and chips, and creamy seafood chowder.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- WHERE TO EAT ACROSS IRELAND -->
+        <section id="restaurants">
+            <h2 class="section-title">Where to Eat Across Ireland</h2>
+
+            <div class="row">
+
+                <div class="col s12 m6">
+                    <div class="card-panel-custom">
+                        <h3 style="color: #2e7d32; font-size: 1.15rem; font-weight: 700; margin-top: 0; margin-bottom: 14px;">
+                            Popular Dining Hubs
+                        </h3>
+
+                        <p style="font-size: 0.92rem; color: #555; margin-bottom: 14px;">
+                            Each major Irish city offers a distinct culinary experience:
+                        </p>
+
+                        <ul class="hub-list">
+                            <li><strong>• Dublin:</strong> Home to Michelin-star dining, international food markets, and historic pub dining.</li>
+                            <li><strong>• Galway:</strong> Famous for its seafood festivals, fresh oyster bars, and lively cobblestone street cafes.</li>
+                            <li><strong>• Cork:</strong> Known as Ireland's food capital, featuring the historic English Market and artisan food stalls.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col s12 m6">
+                    <div class="card-panel-custom">
+                        <h3 style="color: #2e7d32; font-size: 1.15rem; font-weight: 700; margin-top: 0; margin-bottom: 14px;">
+                            Traditional Irish Pub Dining
+                        </h3>
+
+                        <p style="font-size: 0.92rem; color: #555; line-height: 1.6; margin: 0;">
+                            Irish pubs are far more than just drink venues—they are social hubs that serve traditional hearty meals.
+                            Many historic pubs offer live traditional music (seisiún) alongside classic meals like shepherd's pie and freshly pulled Guinness.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- A TASTE OF THE EMERALD ISLE -->
+        <section>
+            <h2 class="section-title">A Taste of the Emerald Isle</h2>
+
+            <div class="row">
+
+                <div class="col s12 m6">
+                    <div class="gallery-card">
+                        <img src="irish foood.jpeg2.jpg" alt="Traditional Irish Cuisine">
+                        <div class="card-info">
+                            <h3>Traditional Irish Cuisine</h3>
+                            <p>Hearty home-cooked meals featuring locally sourced potatoes, meats, and fresh vegetables cooked to perfection.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m6">
+                    <div class="gallery-card">
+                        <img src="historic irish pub j.peg.jpeg" alt="Historic Irish Pub Atmosphere">
+                        <div class="card-info">
+                            <h3>Historic Irish Pub Atmosphere</h3>
+                            <p>Cozy interiors, warm wooden décor, and friendly locals make pub dining a memorable cultural experience.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col s12 m6">
+                    <div class="gallery-card">
+                        <img src="irishbakes.jepg3.jpeg" alt="Irish Baked Favorites">
+                        <div class="card-info">
+                            <h3>Irish Baked Favorites</h3>
+                            <p>Delicious freshly baked breads, pastries, and treats crafted with traditional recipes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m6">
+                    <div class="gallery-card">
+                        <img src="irishpub.jeg.jpeg" alt="Irish Pubs">
+                        <div class="card-info">
+                            <h3>Traditional Pubs</h3>
+                            <p>Authentic local gathering spots offering classic meals, lively atmospheres, and historic charm.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- OFFICIAL FOOD GUIDES -->
+        <section>
+            <h2 class="section-title">Explore Official Food Guides</h2>
+
+            <div class="card-panel-custom center-align">
+                <p style="color: #555; margin-bottom: 20px; font-size: 0.95rem;">
+                    Planning your culinary tour? Check out these external resources to discover top-rated restaurants, local food tours, and seasonal festivals:
+                </p>
+
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://www.ireland.com/" target="_blank" rel="noopener" class="btn-custom">
+                        Tourism Ireland Dining Directory
+                    </a>
+
+                    <a href="https://www.discoverireland.ie/" target="_blank" rel="noopener" class="btn-custom">
+                        Discover Ireland Food & Drink Guide
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK DINING TIPS -->
+        <section id="travel-tips">
+            <h2 class="section-title">Quick Dining Tips</h2>
+
+            <div class="row">
+
+                <div class="col s12 m4">
+                    <div class="dish-card">
+                        <div class="dish-title">Budget Friendly Options</div>
+                        <p>Cafes and traditional pub lunches offer great value for money without sacrificing authentic flavor.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="dish-card">
+                        <div class="dish-title">Make Reservations</div>
+                        <p>Popular restaurants in Dublin and Galway fill up fast on weekends, so reserve early.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="dish-card">
+                        <div class="dish-title">Tipping Etiquette</div>
+                        <p>A tip of 10%–15% is standard for sit-down restaurant service if a service fee isn't included.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="card-panel-custom" style="padding: 10px 20px;">
+                <ul class="collapsible z-depth-0" style="border: none;">
+
+                    <li>
+                        <div class="collapsible-header" style="font-weight: 600; color: #2e7d32;">
+                            <i class="material-icons">restaurant</i>
+                            What food is Ireland known for?
+                        </div>
+
+                        <div class="collapsible-body">
+                            <span>Ireland is known for classic comfort foods such as Irish stew, soda bread, colcannon, seafood chowder, and a full Irish breakfast.</span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="collapsible-header" style="font-weight: 600; color: #2e7d32;">
+                            <i class="material-icons">place</i>
+                            What cities should I explore for dining?
+                        </div>
+
+                        <div class="collapsible-body">
+                            <span>Dublin, Galway, and Cork are top destinations for culinary experiences, artisan markets, and authentic pub dining.</span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="collapsible-header" style="font-weight: 600; color: #2e7d32;">
+                            <i class="material-icons">event</i>
+                            Should I make reservations in advance?
+                        </div>
+
+                        <div class="collapsible-body">
+                            <span>Reservations are recommended for fine dining and popular dinner spots in high season, while traditional pubs are usually walk-in friendly.</span>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <!-- NEW Group Member Footer -->
+    <footer class="page-footer teal darken-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Explore Ireland</h5>
+                    <p class="grey-text text-lighten-4">See other helpful tips for traveling to Ireland.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="index.html">Home</a></li>
+                        <li><a class="grey-text text-lighten-3" href="costs.html">Cost</a></li>
+                        <li><a class="grey-text text-lighten-3" href="restaurants.html">Restaurants</a></li>
+                        <li><a class="grey-text text-lighten-3" href="Thingstodo.html">Things To Do</a></li>
+                        <li><a class="grey-text text-lighten-3" href="traveltips.html">Travel Tips</a></li>
+                        <li><a class="grey-text text-lighten-3" href="aboutus.html">About Us</a></li>
+                        <li><a class="grey-text text-lighten-3" href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright" style="border-top: 1px solid rgba(255, 255, 255, 0.35);">
+            <div class="container">
+                © 2026 Control Alt Elite, All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Group Member Pagination -->
+    <ul class="pagination center-align teal darken-1 black-text" style="margin-top: 0 !important; margin-bottom: 14px !important; border-top: 2px solid #ffffff !important;">
+        <li class="waves-effect"><a href="index.html">1</a></li>
+        <li class="waves-effect"><a href="costs.html">2</a></li>
+        <li class="active teal lighten-2 black-text"><a href="restaurants.html">3</a></li>
+        <li class="waves-effect"><a href="Thingstodo.html">4</a></li>
+        <li class="waves-effect"><a href="traveltips.html">5</a></li>
+        <li class="waves-effect"><a href="contact.html">6</a></li>
+        <li class="waves-effect"><a href="aboutus.html">7</a></li>
+    </ul>
+
+    <!-- jQuery & MATERIALIZE JAVASCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
+
+            var collapsibles = document.querySelectorAll('.collapsible');
+            M.Collapsible.init(collapsibles);
+        });
+    </script>
+
+</body>
+</html>
      
