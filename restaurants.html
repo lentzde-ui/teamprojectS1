@@ -27,23 +27,29 @@
             margin: 0;
         }
 
-        /* MATCHES COSTS.HTML CONTAINER WIDTH */
+        /* MATCHES COSTS.HTML CONTAINER & NAVBAR WIDTH */
+        .nav-wrapper.container,
         main.container {
-            flex: 1 0 auto;
             width: 70% !important;
             max-width: 1000px !important;
             margin: 0 auto !important;
+        }
+
+        main.container {
+            flex: 1 0 auto;
             padding-top: 24px;
             padding-bottom: 45px;
         }
 
         @media only screen and (max-width: 992px) {
+            .nav-wrapper.container,
             main.container {
                 width: 85% !important;
             }
         }
 
         @media only screen and (max-width: 600px) {
+            .nav-wrapper.container,
             main.container {
                 width: 92% !important;
             }
@@ -212,9 +218,9 @@
     <header>
         <div class="navbar-fixed">
             <nav class="teal darken-1" style="display: block; text-align: left;">
-                <div class="nav-wrapper container" style="width: 85% !important; max-width: 1280px !important; margin: 0 auto !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; position: relative;">
-                    <!-- Brand Logo with Icon -->
-                    <a href="index.html" class="brand-logo left valign-wrapper" style="position: relative !important; left: 0 !important; margin-left: -40px !important; padding-left: 0 !important; transform: none !important; float: left !important; text-decoration: none !important; display: inline-flex !important; align-items: center !important;">
+                <div class="nav-wrapper container" style="padding-left: 0 !important; padding-right: 0 !important; display: block !important; position: relative;">
+                    <!-- Brand Logo aligned with content container -->
+                    <a href="index.html" class="brand-logo left valign-wrapper" style="position: relative !important; left: 0 !important; margin-left: 0 !important; padding-left: 0 !important; transform: none !important; float: left !important; text-decoration: none !important; display: inline-flex !important; align-items: center !important;">
                         <i class="material-icons left">explore</i>Explore Ireland
                     </a>
                     <!-- Mobile Hamburger Trigger -->
