@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="global.css">
 
     <style>
+        html {
+            overflow-y: scroll;
+        }
+
         body {
             background-color: #f4f7f8;
             color: #2c3e50;
@@ -27,12 +31,13 @@
             margin: 0;
         }
 
-        /* FORCE NAVBAR TO MATCH THINGSTODO.HTML & COSTS.HTML */
+        /* FORCE NAVBAR TO MATCH INDEX.HTML, THINGSTODO.HTML & COSTS.HTML */
         header nav.teal.darken-1 {
             position: relative !important;
             width: 100% !important;
             height: 64px !important;
             line-height: 64px !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
         }
 
         header nav .nav-wrapper.container,
@@ -51,22 +56,28 @@
 
         header nav .brand-logo {
             position: static !important;
+            left: auto !important;
             transform: none !important;
             margin: 0 !important;
             padding: 0 !important;
+            float: none !important;
             display: inline-flex !important;
             align-items: center !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
             font-size: 1.8rem !important;
+            font-weight: 500 !important;
             text-decoration: none !important;
         }
 
         header nav ul.right {
             margin: 0 !important;
             float: none !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
         }
 
         header nav ul.right a {
             text-decoration: none !important;
+            font-weight: 500 !important;
         }
 
         main.container {
@@ -246,26 +257,28 @@
         }
     </style>
 </head>
-<!-- Navigation Header -->
+<body>
+
+    <!-- Navigation Header -->
     <header>
         <div class="navbar-fixed">
-            <nav class="teal darken-1" style="display: block; text-align: left; font-family: 'Plus Jakarta Sans', sans-serif !important;">
-                <div class="nav-wrapper container" style="width: 85% !important; max-width: 1280px !important; margin: 0 auto !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; position: relative;">
+            <nav class="teal darken-1">
+                <div class="nav-wrapper container">
                     <!-- Brand Logo with Icon -->
-                    <a href="index.html" class="brand-logo left valign-wrapper" style="position: relative !important; left: 0 !important; margin-left: -40px !important; padding-left: 0 !important; transform: none !important; float: left !important; text-decoration: none !important; display: inline-flex !important; align-items: center !important; font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: 2.1rem !important; font-weight: 500 !important;">
+                    <a href="index.html" class="brand-logo valign-wrapper">
                         <i class="material-icons left">explore</i>Explore Ireland
                     </a>
                     <!-- Mobile Hamburger Trigger -->
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger" style="text-decoration: none !important;"><i class="material-icons">menu</i></a>
                     <!-- Desktop Navigation Links -->
-                    <ul class="right hide-on-med-and-down" style="float: right !important; font-family: 'Plus Jakarta Sans', sans-serif !important;">
-                        <li><a style="text-decoration: none !important; font-weight: 500 !important;" href="index.html">Home</a></li>
-                        <li><a style="text-decoration: none !important; font-weight: 500 !important;" href="costs.html">Cost</a></li>
-                        <li class="active"><a style="text-decoration: none !important; font-weight: 500 !important;" href="restaurants.html">Restaurants</a></li>
-                        <li><a style="text-decoration: none !important; font-weight: 500 !important;" href="Thingstodo.html">Things to Do</a></li>
-                        <li><a style="text-decoration: none !important; font-weight: 500 !important;" href="traveltips.html">Travel Tips</a></li>
-                        <li><a style="text-decoration: none !important; font-weight: 500 !important;" href="aboutus.html">About Us</a></li>
-                        <li><a style="text-decoration: none !important; font-weight: 500 !important;" href="contact.html">Contact Us</a></li>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="costs.html">Cost</a></li>
+                        <li class="active"><a href="restaurants.html">Restaurants</a></li>
+                        <li><a href="Thingstodo.html">Things to Do</a></li>
+                        <li><a href="traveltips.html">Travel Tips</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
             </nav>
@@ -282,12 +295,6 @@
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </header>
-
-
-   
-
-
-      
 
     <!-- MAIN CONTENT CONTAINER -->
     <main class="container">
