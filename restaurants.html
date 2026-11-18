@@ -27,12 +27,46 @@
             margin: 0;
         }
 
-        /* MATCHES COSTS.HTML CONTAINER & NAVBAR WIDTH */
-        .nav-wrapper.container,
+        /* FORCE NAVBAR TO MATCH THINGSTODO.HTML & COSTS.HTML */
+        header nav.teal.darken-1 {
+            position: relative !important;
+            width: 100% !important;
+            height: 64px !important;
+            line-height: 64px !important;
+        }
+
+        header nav .nav-wrapper.container,
         main.container {
             width: 70% !important;
-            max-width: 1000px !important;
+            max-width: 1280px !important;
             margin: 0 auto !important;
+        }
+
+        header nav .nav-wrapper.container {
+            padding: 0 !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+        }
+
+        header nav .brand-logo {
+            position: static !important;
+            transform: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            font-size: 1.8rem !important;
+            text-decoration: none !important;
+        }
+
+        header nav ul.right {
+            margin: 0 !important;
+            float: none !important;
+        }
+
+        header nav ul.right a {
+            text-decoration: none !important;
         }
 
         main.container {
@@ -42,14 +76,14 @@
         }
 
         @media only screen and (max-width: 992px) {
-            .nav-wrapper.container,
+            header nav .nav-wrapper.container,
             main.container {
                 width: 85% !important;
             }
         }
 
         @media only screen and (max-width: 600px) {
-            .nav-wrapper.container,
+            header nav .nav-wrapper.container,
             main.container {
                 width: 92% !important;
             }
@@ -142,11 +176,10 @@
             color: #263238;
         }
 
-        /* PICTURE GALLERY */
+        /* PICTURE GALLERY (NO OVERFLOW HIDDEN SO MATERIAL BOX CAN EXPAND) */
         .gallery-card {
             background: #ffffff;
             border-radius: 6px;
-            overflow: hidden;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
             border: 1px solid #e6ecec;
             height: 100%;
@@ -157,6 +190,8 @@
             height: 190px;
             object-fit: cover;
             display: block;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
         }
 
         .gallery-card .card-info {
@@ -214,7 +249,7 @@
 
 <body>
 
-<!-- Navigation Header -->
+    <!-- Navigation Header -->
     <header>
         <nav class="teal darken-1">
             <div class="nav-wrapper container">
@@ -342,7 +377,7 @@
             </div>
         </section>
 
-        <!-- A TASTE OF THE EMERALD ISLE -->
+        <!-- A TASTE OF THE EMERALD ISLE (WITH MATERIAL BOX LIGHTBOX) -->
         <section>
             <h2 class="section-title">A Taste of the Emerald Isle</h2>
 
@@ -350,7 +385,7 @@
 
                 <div class="col s12 m6">
                     <div class="gallery-card">
-                        <img src="irish foood.jpeg2.jpg" alt="Traditional Irish Cuisine">
+                        <img class="materialboxed" data-caption="Traditional Irish Cuisine" src="irish foood.jpeg2.jpg" alt="Traditional Irish Cuisine">
                         <div class="card-info">
                             <h3>Traditional Irish Cuisine</h3>
                             <p>Hearty home-cooked meals featuring locally sourced potatoes, meats, and fresh vegetables cooked to perfection.</p>
@@ -360,7 +395,7 @@
 
                 <div class="col s12 m6">
                     <div class="gallery-card">
-                        <img src="historic irish pub j.peg.jpeg" alt="Historic Irish Pub Atmosphere">
+                        <img class="materialboxed" data-caption="Historic Irish Pub Atmosphere" src="historic irish pub j.peg.jpeg" alt="Historic Irish Pub Atmosphere">
                         <div class="card-info">
                             <h3>Historic Irish Pub Atmosphere</h3>
                             <p>Cozy interiors, warm wooden décor, and friendly locals make pub dining a memorable cultural experience.</p>
@@ -374,7 +409,7 @@
 
                 <div class="col s12 m6">
                     <div class="gallery-card">
-                        <img src="irishbakes.jepg3.jpeg" alt="Irish Baked Favorites">
+                        <img class="materialboxed" data-caption="Irish Baked Favorites" src="irishbakes.jepg3.jpeg" alt="Irish Baked Favorites">
                         <div class="card-info">
                             <h3>Irish Baked Favorites</h3>
                             <p>Delicious freshly baked breads, pastries, and treats crafted with traditional recipes.</p>
@@ -384,7 +419,7 @@
 
                 <div class="col s12 m6">
                     <div class="gallery-card">
-                        <img src="irishpub.jeg.jpeg" alt="Irish Pubs">
+                        <img class="materialboxed" data-caption="Traditional Pubs" src="irishpub.jeg.jpeg" alt="Irish Pubs">
                         <div class="card-info">
                             <h3>Traditional Pubs</h3>
                             <p>Authentic local gathering spots offering classic meals, lively atmospheres, and historic charm.</p>
@@ -546,6 +581,9 @@
 
             var collapsibles = document.querySelectorAll('.collapsible');
             M.Collapsible.init(collapsibles);
+
+            var materialboxes = document.querySelectorAll('.materialboxed');
+            M.Materialbox.init(materialboxes);
         });
     </script>
 
