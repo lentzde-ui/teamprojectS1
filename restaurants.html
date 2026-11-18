@@ -27,73 +27,90 @@
             margin: 0;
         }
 
+        /* MATCHES COSTS.HTML CONTAINER WIDTH */
         main.container {
             flex: 1 0 auto;
-            width: 85% !important;
-            max-width: 1100px !important;
-            padding-top: 30px;
-            padding-bottom: 50px;
+            width: 70% !important;
+            max-width: 1000px !important;
+            margin: 0 auto !important;
+            padding-top: 24px;
+            padding-bottom: 45px;
+        }
+
+        @media only screen and (max-width: 992px) {
+            main.container {
+                width: 85% !important;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            main.container {
+                width: 92% !important;
+            }
         }
 
         /* EQUAL HEIGHT CARDS IN ROWS */
         .row.equal-height {
             display: flex;
             flex-wrap: wrap;
+            margin-left: -10px;
+            margin-right: -10px;
         }
 
         .row.equal-height > .col {
             display: flex;
             flex-direction: column;
-            margin-bottom: 20px;
+            padding: 0 10px;
+            margin-bottom: 16px;
         }
 
         /* SECTION TITLES - MATCHES COSTS PAGE TEAL */
         .section-title {
             color: #00897b;
-            font-size: 1.55rem;
-            font-weight: 600;
+            font-size: 1.45rem;
+            font-weight: 500;
             text-align: center;
-            margin: 40px 0 22px 0;
+            margin: 34px 0 18px 0;
         }
 
-        /* CARDS */
+        /* CARDS - COMPACT PADDING & HEIGHT LIKE COSTS.HTML */
         .card-panel-custom {
             background: #ffffff;
-            border-radius: 8px;
-            padding: 24px 28px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            border-radius: 6px;
+            padding: 20px 24px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
             border: 1px solid #e6ecec;
             height: 100%;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .intro-box {
-            line-height: 1.65;
+            line-height: 1.55;
             color: #37474f;
-            font-size: 0.98rem;
-            margin-bottom: 10px;
+            font-size: 0.94rem;
+            margin-bottom: 8px;
         }
 
         .dish-card {
             background: #ffffff;
-            border-radius: 8px;
-            padding: 20px 22px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            border-radius: 6px;
+            padding: 16px 18px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
             border: 1px solid #e6ecec;
             height: 100%;
         }
 
         .dish-card .dish-title {
             color: #00897b;
-            font-size: 1.08rem;
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-size: 1.02rem;
+            font-weight: 500;
+            margin-bottom: 6px;
         }
 
         .dish-card p {
             color: #546e7a;
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: 0.86rem;
+            line-height: 1.45;
             margin: 0;
         }
 
@@ -105,10 +122,10 @@
         }
 
         .hub-list li {
-            margin-bottom: 12px;
-            font-size: 0.93rem;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
             color: #37474f;
-            line-height: 1.55;
+            line-height: 1.5;
         }
 
         .hub-list li:last-child {
@@ -122,34 +139,34 @@
         /* PICTURE GALLERY */
         .gallery-card {
             background: #ffffff;
-            border-radius: 8px;
+            border-radius: 6px;
             overflow: hidden;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
             border: 1px solid #e6ecec;
             height: 100%;
         }
 
         .gallery-card img {
             width: 100%;
-            height: 220px;
+            height: 190px;
             object-fit: cover;
             display: block;
         }
 
         .gallery-card .card-info {
-            padding: 18px 22px;
+            padding: 16px 20px;
         }
 
         .gallery-card .card-info h3 {
             color: #00897b;
-            font-size: 1.08rem;
-            font-weight: 600;
+            font-size: 1.02rem;
+            font-weight: 500;
             margin: 0 0 6px 0;
         }
 
         .gallery-card .card-info p {
             color: #546e7a;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             margin: 0;
             line-height: 1.45;
         }
@@ -163,9 +180,9 @@
             font-weight: 600;
             text-transform: none;
             box-shadow: none;
-            height: 42px;
-            line-height: 40px;
-            padding: 0 20px;
+            height: 40px;
+            line-height: 38px;
+            padding: 0 18px;
             display: inline-block;
             transition: all 0.2s ease;
         }
@@ -228,7 +245,7 @@
         </ul>
     </header>
 
-    <!-- MAIN CONTENT CONTAINER (Matches Costs Page Alignment) -->
+    <!-- MAIN CONTENT CONTAINER -->
     <main class="container">
 
         <!-- INTRODUCTION -->
@@ -285,11 +302,11 @@
 
                 <div class="col s12 m6">
                     <div class="card-panel-custom" style="margin-bottom: 0;">
-                        <h3 style="color: #00897b; font-size: 1.15rem; font-weight: 600; margin-top: 0; margin-bottom: 14px;">
+                        <h3 style="color: #00897b; font-size: 1.08rem; font-weight: 500; margin-top: 0; margin-bottom: 12px;">
                             Popular Dining Hubs
                         </h3>
 
-                        <p style="font-size: 0.93rem; color: #37474f; margin-bottom: 14px;">
+                        <p style="font-size: 0.9rem; color: #37474f; margin-bottom: 12px;">
                             Each major Irish city offers a distinct culinary experience:
                         </p>
 
@@ -303,14 +320,14 @@
 
                 <div class="col s12 m6">
                     <div class="card-panel-custom" style="margin-bottom: 0;">
-                        <h3 style="color: #00897b; font-size: 1.15rem; font-weight: 600; margin-top: 0; margin-bottom: 14px;">
+                        <h3 style="color: #00897b; font-size: 1.08rem; font-weight: 500; margin-top: 0; margin-bottom: 12px;">
                             Traditional Irish Pub Dining
                         </h3>
 
-                        <p style="font-size: 0.93rem; color: #37474f; line-height: 1.6; margin-bottom: 12px;">
+                        <p style="font-size: 0.9rem; color: #37474f; line-height: 1.55; margin-bottom: 10px;">
                             Irish pubs are far more than just drink venues—they are social hubs that serve traditional hearty meals.
                         </p>
-                        <p style="font-size: 0.93rem; color: #37474f; line-height: 1.6; margin: 0;">
+                        <p style="font-size: 0.9rem; color: #37474f; line-height: 1.55; margin: 0;">
                             Many historic pubs offer live traditional music (seisiún) alongside classic meals like shepherd's pie and freshly pulled Guinness.
                         </p>
                     </div>
@@ -377,14 +394,155 @@
             <h2 class="section-title">Explore Official Food Guides</h2>
 
             <div class="card-panel-custom center-align">
-                <p style="color: #37474f; margin-bottom: 20px; font-size: 0.95rem;">
+                <p style="color: #37474f; margin-bottom: 18px; font-size: 0.92rem;">
                     Planning your culinary tour? Check out these external resources to discover top-rated restaurants, local food tours, and seasonal festivals:
                 </p>
 
-                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
                     <a href="https://www.ireland.com/" target="_blank" rel="noopener" class="btn-custom">
                         Tourism Ireland Dining Directory
                     </a>
 
-                    <a href="https://www.discoverireland.ie/" target="_blank
+                    <a href="https://www.discoverireland.ie/" target="_blank" rel="noopener" class="btn-custom">
+                        Discover Ireland Food &amp; Drink Guide
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK DINING TIPS -->
+        <section id="travel-tips">
+            <h2 class="section-title">Quick Dining Tips</h2>
+
+            <div class="row equal-height">
+
+                <div class="col s12 m4">
+                    <div class="dish-card">
+                        <div class="dish-title">Budget Friendly Options</div>
+                        <p>Cafes and traditional pub lunches offer great value for money without sacrificing authentic flavor.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="dish-card">
+                        <div class="dish-title">Make Reservations</div>
+                        <p>Popular restaurants in Dublin and Galway fill up fast on weekends, so reserve early.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="dish-card">
+                        <div class="dish-title">Tipping Etiquette</div>
+                        <p>A tip of 10%–15% is standard for sit-down restaurant service if a service fee isn't included.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="card-panel-custom" style="padding: 8px 18px;">
+                <ul class="collapsible z-depth-0" style="border: none;">
+
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">restaurant</i>
+                            What food is Ireland known for?
+                        </div>
+
+                        <div class="collapsible-body">
+                            <span>Ireland is known for classic comfort foods such as Irish stew, soda bread, colcannon, seafood chowder, and a full Irish breakfast.</span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">place</i>
+                            What cities should I explore for dining?
+                        </div>
+
+                        <div class="collapsible-body">
+                            <span>Dublin, Galway, and Cork are top destinations for culinary experiences, artisan markets, and authentic pub dining.</span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">event</i>
+                            Should I make reservations in advance?
+                        </div>
+
+                        <div class="collapsible-body">
+                            <span>Reservations are recommended for fine dining and popular dinner spots in high season, while traditional pubs are usually walk-in friendly.</span>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="page-footer teal darken-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Explore Ireland</h5>
+                    <p class="grey-text text-lighten-4">See other helpful tips for traveling to Ireland.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="index.html">Home</a></li>
+                        <li><a class="grey-text text-lighten-3" href="costs.html">Cost</a></li>
+                        <li><a class="grey-text text-lighten-3" href="restaurants.html">Restaurants</a></li>
+                        <li><a class="grey-text text-lighten-3" href="Thingstodo.html">Things To Do</a></li>
+                        <li><a class="grey-text text-lighten-3" href="traveltips.html">Travel Tips</a></li>
+                        <li><a class="grey-text text-lighten-3" href="aboutus.html">About Us</a></li>
+                        <li><a class="grey-text text-lighten-3" href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright" style="border-top: 1px solid rgba(255, 255, 255, 0.35);">
+            <div class="container">
+                © 2026 Control Alt Elite, All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Thick white spacer bar between 2026 copyright and pagination -->
+    <div style="width: 100%; height: 15px; background-color: #ffffff; display: block;"></div>
+
+    <!-- Group Member Pagination -->
+    <ul class="pagination center-align teal darken-1 black-text" style="margin-top: 0 !important; margin-bottom: 14px !important;">
+        <li class="waves-effect"><a href="index.html">1</a></li>
+        <li class="waves-effect"><a href="costs.html">2</a></li>
+        <li class="active teal lighten-2 black-text"><a href="restaurants.html">3</a></li>
+        <li class="waves-effect"><a href="Thingstodo.html">4</a></li>
+        <li class="waves-effect"><a href="traveltips.html">5</a></li>
+        <li class="waves-effect"><a href="contact.html">6</a></li>
+        <li class="waves-effect"><a href="aboutus.html">7</a></li>
+    </ul>
+
+    <!-- jQuery & MATERIALIZE JAVASCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
+
+            var collapsibles = document.querySelectorAll('.collapsible');
+            M.Collapsible.init(collapsibles);
+        });
+    </script>
+
+</body>
+</html>
      
