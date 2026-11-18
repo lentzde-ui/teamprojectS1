@@ -246,34 +246,30 @@
         }
     </style>
 </head>
-
-<body>
 <!-- Navigation Header -->
     <header>
-        <nav class="teal darken-1" style="height: 70px !important; line-height: 70px !important; box-shadow: 0 2px 4px rgba(0,0,0,0.12) !important;">
-            <div class="nav-wrapper container" style="width: 70% !important; max-width: 1280px !important; margin: 0 auto !important; display: flex !important; justify-content: space-between !important; align-items: center !important; height: 70px !important;">
-                <!-- Brand Logo -->
-                <a href="index.html" class="brand-logo" style="position: static !important; transform: none !important; font-size: 1.95rem !important; font-weight: 500 !important; letter-spacing: 0.2px !important; display: inline-flex !important; align-items: center !important; line-height: 70px !important; height: 70px !important; text-decoration: none !important;">
-                    <i class="material-icons" style="font-size: 26px !important; margin-right: 10px !important; line-height: 70px !important; height: 70px !important;">explore</i>Explore Ireland
-                </a>
-
-                <!-- Mobile Hamburger Trigger -->
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger" style="line-height: 70px !important; height: 70px !important;">
-                    <i class="material-icons">menu</i>
-                </a>
-
-                <!-- Desktop Navigation Links -->
-                <ul class="right hide-on-med-and-down" style="display: flex !important; align-items: center !important; height: 70px !important; margin: 0 !important;">
-                    <li style="height: 70px !important;"><a href="index.html" style="font-size: 0.95rem !important; font-weight: 500 !important; padding: 0 12px !important; line-height: 70px !important; height: 70px !important;">Home</a></li>
-                    <li style="height: 70px !important;"><a href="costs.html" style="font-size: 0.95rem !important; font-weight: 500 !important; padding: 0 12px !important; line-height: 70px !important; height: 70px !important;">Cost</a></li>
-                    <li class="active" style="height: 70px !important;"><a href="restaurants.html" style="font-size: 0.95rem !important; font-weight: 500 !important; padding: 0 12px !important; line-height: 70px !important; height: 70px !important;">Restaurants</a></li>
-                    <li style="height: 70px !important;"><a href="Thingstodo.html" style="font-size: 0.95rem !important; font-weight: 500 !important; padding: 0 12px !important; line-height: 70px !important; height: 70px !important;">Things to Do</a></li>
-                    <li style="height: 70px !important;"><a href="traveltips.html" style="font-size: 0.95rem !important; font-weight: 500 !important; padding: 0 12px !important; line-height: 70px !important; height: 70px !important;">Travel Tips</a></li>
-                    <li style="height: 70px !important;"><a href="aboutus.html" style="font-size: 0.95rem !important; font-weight: 500 !important; padding: 0 12px !important; line-height: 70px !important; height: 70px !important;">About Us</a></li>
-                    <li style="height: 70px !important;"><a href="contact.html" style="font-size: 0.95rem !important; font-weight: 500 !important; padding: 0 12px !important; line-height: 70px !important; height: 70px !important;">Contact Us</a></li>
-                </ul>
-            </div>
-        </nav>
+        <div class="navbar-fixed">
+            <nav class="teal darken-1" style="display: block; text-align: left; font-family: 'Plus Jakarta Sans', sans-serif !important;">
+                <div class="nav-wrapper container" style="width: 85% !important; max-width: 1280px !important; margin: 0 auto !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; position: relative;">
+                    <!-- Brand Logo with Icon -->
+                    <a href="index.html" class="brand-logo left valign-wrapper" style="position: relative !important; left: 0 !important; margin-left: -40px !important; padding-left: 0 !important; transform: none !important; float: left !important; text-decoration: none !important; display: inline-flex !important; align-items: center !important; font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: 2.1rem !important; font-weight: 500 !important;">
+                        <i class="material-icons left">explore</i>Explore Ireland
+                    </a>
+                    <!-- Mobile Hamburger Trigger -->
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger" style="text-decoration: none !important;"><i class="material-icons">menu</i></a>
+                    <!-- Desktop Navigation Links -->
+                    <ul class="right hide-on-med-and-down" style="float: right !important; font-family: 'Plus Jakarta Sans', sans-serif !important;">
+                        <li><a style="text-decoration: none !important; font-weight: 500 !important;" href="index.html">Home</a></li>
+                        <li><a style="text-decoration: none !important; font-weight: 500 !important;" href="costs.html">Cost</a></li>
+                        <li class="active"><a style="text-decoration: none !important; font-weight: 500 !important;" href="restaurants.html">Restaurants</a></li>
+                        <li><a style="text-decoration: none !important; font-weight: 500 !important;" href="Thingstodo.html">Things to Do</a></li>
+                        <li><a style="text-decoration: none !important; font-weight: 500 !important;" href="traveltips.html">Travel Tips</a></li>
+                        <li><a style="text-decoration: none !important; font-weight: 500 !important;" href="aboutus.html">About Us</a></li>
+                        <li><a style="text-decoration: none !important; font-weight: 500 !important;" href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
         <!-- Mobile Sidenav -->
         <ul class="sidenav" id="mobile-demo">
@@ -286,6 +282,7 @@
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </header>
+
 
    
 
