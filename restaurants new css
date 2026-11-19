@@ -1,0 +1,287 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f3e7;
+    color: #304936;
+}
+
+header {
+    background-color: #557a55;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+.container {
+    width: 85%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.intro {
+    text-align: center;
+    padding: 35px 10px;
+}
+
+.intro h2,
+.food-section h2,
+.places h2,
+.tips h2 {
+    color: #3f633c;
+}
+
+.intro p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* Food Cards */
+
+.food-section {
+    background-color: #e5ead8;
+    padding: 35px;
+    text-align: center;
+}
+
+.food-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.food-card {
+    background-color: #fffaf0;
+    width: 200px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.food-card h3 {
+    color: #557a55;
+}
+
+
+/* Places */
+
+.places {
+    text-align: center;
+    padding: 35px 10px;
+}
+
+.places p {
+    line-height: 1.7;
+}
+
+.links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 18px;
+    background-color: #557a55;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.links a:hover {
+    background-color: #38583b;
+}
+
+
+/* Images */
+
+.gallery {
+    background-color: #d9e8ed;
+    padding: 35px;
+    text-align: center;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.images div {
+    width: 45%;
+    min-width: 280px;
+}
+
+.images img {
+    max-width: 100%;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.images p {
+    font-weight: bold;
+}
+
+
+/* Tips */
+
+.tips {
+    text-align: center;
+    padding: 35px;
+}
+
+.tips p {
+    line-height: 1.7;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #557a55;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+/* ================================= */
+/* HANDS-ON #5 RESPONSIVE DESIGN */
+/* ================================= */
+
+/* Flexible Grid */
+
+* {
+    box-sizing: border-box;
+}
+
+.columnWrapper {
+    float: left;
+    width: 80%;
+}
+
+.sidebar2 {
+    float: right;
+    width: 20%;
+    padding: 0 10px 0 20px;
+}
+
+.sidebar1 {
+    float: left;
+    width: 25%;
+    padding: 0 20px 0 10px;
+}
+
+.main {
+    float: right;
+    width: 75%;
+    padding: 0 10px;
+    border-left: 1px dashed red;
+    border-right: 1px solid blue;
+}
+
+
+/* Fluid Images */
+
+img {
+    max-width: 100%;
+}
+
+
+/* Tablet Size */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .sidebar2 {
+        width: auto;
+        clear: both;
+        border-top: 2px solid black;
+        padding-top: 10px;
+    }
+
+    .columnWrapper {
+        width: auto;
+    }
+
+    .main {
+        border-right: none;
+    }
+
+}
+
+
+/* Mobile Phone Size */
+
+@media (max-width: 767px) {
+
+    .columnWrapper,
+    .main,
+    .sidebar1,
+    .sidebar2 {
+        float: none;
+        width: auto;
+    }
+
+    .main {
+        border: none;
+    }
+
+    .sidebar1,
+    .sidebar2 {
+        border-top: 2px solid black;
+        margin-top: 25px;
+        padding-top: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .main h2,
+    aside h2 {
+        font-size: 1.5em;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav li {
+        float: none;
+        display: inline-block;
+    }
+
+    nav a {
+        border: none;
+    }
+
+    .food-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .food-card {
+        width: 90%;
+    }
+
+    .images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .images div {
+        width: 100%;
+        min-width: 0;
+    }
+
+}
