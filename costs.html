@@ -1,65 +1,431 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ireland Travel | Things to Do</title>
-    <link rel="stylesheet" href="thingstodo.css">
+    <title>Ireland Travel | Travel Costs</title>
     <link rel="stylesheet" href="global.css">
-    
+
     <!-- Google Fonts & Material Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Materialize CSS, jQuery, and Materialize JS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <style>
-        /* Video Sizing & Black Box Removal */
-        .video-wrapper {
-            max-width: 650px;
-            width: 100%;
-            margin: 20px auto;
-        }
-        .video-container {
-            background-color: transparent !important; /* Removes Materialize default black background */
+        /* Base Page Styling */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f4f9f8;
+            color: #263238;
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
         }
 
-        /* Equal Height Attraction Cards */
-        .row.equal-height-cards {
-            display: flex;
-            flex-wrap: wrap;
+        main.container {
+            flex: 1 0 auto;
+            width: 90%;
+            max-width: 1180px;
+            padding-top: 24px;
+            padding-bottom: 36px;
         }
-        .row.equal-height-cards > .col {
-            display: flex;
+
+        /* Navbar Alignment */
+        nav .brand-logo {
+            font-weight: 600;
+            font-size: 1.55rem;
         }
-        .row.equal-height-cards .card {
+
+        /* Section Spacing & Centered Teal Headings */
+        .section {
+            padding-top: 14px;
+            padding-bottom: 14px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #00897b;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin: 0 0 18px 0;
+        }
+
+        /* Responsive Grids */
+        .grid {
+            display: grid;
+            gap: 18px;
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 992px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid-4,
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Standard Content Cards */
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #d8e6e4;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            padding: 20px 22px;
+            margin: 0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card p {
+            margin: 0 0 10px 0;
+            font-size: 0.9rem;
+            line-height: 1.55;
+            color: #37474f;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .card-title-blue,
+        .subsection-title,
+        .card-title-green {
+            color: #00897b;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            display: block;
+        }
+
+        .price-tag {
+            color: #546e7a !important;
+            font-weight: 500;
+            font-size: 0.9rem !important;
+            margin-bottom: 8px !important;
+        }
+
+        /* Expense Bullet Lists */
+        .expense-list {
+            margin: 8px 0 0 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .expense-list li {
+            font-size: 0.88rem;
+            line-height: 1.5;
+            color: #37474f;
+            margin-bottom: 6px;
+        }
+
+        /* Image Feature Cards */
+        .image-card {
+            background-color: #ffffff;
+            border: 1px solid #d8e6e4;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            margin: 0;
             display: flex;
             flex-direction: column;
+        }
+
+        .image-card img {
             width: 100%;
-        }
-        .row.equal-height-cards .card .card-image img {
-            height: 200px; /* Standardized height for all card images */
+            height: 210px;
             object-fit: cover;
+            display: block;
         }
-        .row.equal-height-cards .card .card-content {
-            flex-grow: 1; /* Stretches text content to equalize heights */
+
+        .image-card figcaption {
+            padding: 18px 20px;
+        }
+
+        .image-card figcaption p {
+            margin: 0;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            color: #37474f;
+        }
+
+        .image-card a,
+        .sources-section a {
+            color: #0277bd;
+            text-decoration: underline;
+        }
+
+        /* Money-Saving Tips Badges */
+        .site-sections-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        @media (max-width: 992px) {
+            .site-sections-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .site-sections-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section-badge {
+            background-color: #f3faf8;
+            border: 1px solid #b2dfdb;
+            border-radius: 6px;
+            padding: 14px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .badge-title {
+            color: #00796b;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .badge-desc {
+            color: #455a64;
+            font-size: 0.84rem;
+            line-height: 1.45;
+        }
+
+        /* Navigation Cards */
+        a.nav-card {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        a.nav-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 14px rgba(0, 137, 123, 0.12);
+            border-color: #80cbc4;
+        }
+
+        /* Sources List */
+        .sources-section ul {
+            margin: 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .sources-section li {
+            font-size: 0.88rem;
+            color: #37474f;
+            margin-bottom: 4px;
+        }
+
+        /* Interactive Trip Cost Calculator Card (Styled to match Form Input & DOM Output example) */
+        .budget-calc-card {
+            max-width: 640px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #d8e6e4;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+            padding: 28px 30px;
+        }
+
+        .budget-calc-title {
+            color: #00897b;
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin: 0 0 14px 0;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0f2f1;
+        }
+
+        .calc-field-group {
+            margin-bottom: 18px;
+        }
+
+        .calc-field-group label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        /* Override Materialize default underline inputs for clean rounded boxes */
+        .budget-calc-card input[type="text"],
+        .budget-calc-card input[type="number"] {
+            width: 100% !important;
+            height: 46px !important;
+            padding: 0 14px !important;
+            margin: 0 !important;
+            border: 1px solid #cbd5e1 !important;
+            border-radius: 8px !important;
+            background-color: #ffffff !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            font-size: 0.95rem !important;
+            color: #1e293b !important;
+            box-sizing: border-box !important;
+            box-shadow: none !important;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .budget-calc-card input[type="text"]:focus,
+        .budget-calc-card input[type="number"]:focus {
+            border-color: #00897b !important;
+            box-shadow: 0 0 0 3px rgba(0, 137, 123, 0.15) !important;
+        }
+
+        .budget-calc-card input[readonly] {
+            background-color: #f1f5f9 !important;
+            color: #475569 !important;
+            font-weight: 600 !important;
+            cursor: default;
+        }
+
+        .calc-btn {
+            width: 100%;
+            height: 48px;
+            background-color: #00897b;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .calc-btn:hover {
+            background-color: #00796b;
+        }
+
+        .calc-helper-note {
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: #546e7a;
+        }
+
+        .calc-summary-box {
+            margin-top: 16px;
+            padding: 14px 16px;
+            border-radius: 8px;
+            background-color: #f3faf8;
+            border: 1px solid #b2dfdb;
+            color: #1e293b;
+            font-size: 0.92rem;
+            line-height: 1.55;
+            display: none;
+        }
+
+        .calc-summary-box.error {
+            background-color: #fef2f2;
+            border-color: #fecaca;
+            color: #991b1b;
+        }
+
+        /* Footer & Pagination Alignment */
+        footer.page-footer {
+            margin-top: 0;
+            padding-top: 24px;
+        }
+
+        ul.pagination {
+            margin: 0;
+            padding: 10px 0 14px 0;
+        }
+
+        ul.pagination li a {
+            color: #263238;
+            font-weight: 500;
         }
     </style>
 
     <script>
         $(document).ready(function() {
             $('.sidenav').sidenav();
-            $('.parallax').parallax();
         });
+
+        function calculateIrelandTripCost() {
+            const nameInput = document.getElementById("travelerName").value.trim();
+            const days = parseFloat(document.getElementById("tripDays").value);
+            const dailyBudget = parseFloat(document.getElementById("dailyBudget").value);
+            const readOnlyOutput = document.getElementById("totalCostOutput");
+            const summaryDiv = document.getElementById("costSummaryOutput");
+
+            const traveler = nameInput !== "" ? nameInput : "Traveler";
+
+            // Validate numeric inputs
+            if (isNaN(days) || days <= 0 || isNaN(dailyBudget) || dailyBudget <= 0) {
+                readOnlyOutput.value = "";
+                summaryDiv.className = "calc-summary-box error";
+                summaryDiv.style.display = "block";
+                summaryDiv.innerHTML = "Please enter valid positive numbers for both <strong>Trip Length (Days)</strong> and <strong>Estimated Daily Budget (€)</strong>.";
+                return;
+            }
+
+            // Calculate totals in EUR and approximate USD ($1.08 per €1)
+            const totalEur = days * dailyBudget;
+            const totalUsd = totalEur * 1.08;
+
+            // Classify travel tier based on the guide's daily budget tiers
+            let travelStyle = "Mid-Range Traveler";
+            if (dailyBudget <= 100) {
+                travelStyle = "Budget Backpacker";
+            } else if (dailyBudget >= 380) {
+                travelStyle = "Luxury Travel";
+            }
+
+            const formattedEur = totalEur.toLocaleString("en-US", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+            const formattedUsd = totalUsd.toLocaleString("en-US", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+
+            // 1. Update the read-only input .value
+            readOnlyOutput.value = `€${formattedEur} (approx. $${formattedUsd} USD)`;
+
+            // 2. Update the DOM element .innerHTML with a detailed breakdown
+            summaryDiv.className = "calc-summary-box";
+            summaryDiv.style.display = "block";
+            summaryDiv.innerHTML = `
+                <strong>Trip Estimate for ${traveler}:</strong><br>
+                A <strong>${days}-day</strong> trip to Ireland at <strong>€${dailyBudget.toFixed(2)}/day</strong>
+                (<em>${travelStyle}</em> tier) comes out to an estimated total of
+                <strong>€${formattedEur}</strong> (approx. <strong>$${formattedUsd} USD</strong>).
+            `;
+        }
     </script>
 </head>
-<!-- Navigation Header -->
+
+<body>
+    <!-- Navigation Header -->
     <header>
         <div class="navbar-fixed">
             <nav class="teal darken-1">
@@ -73,8 +439,8 @@
                     <!-- Desktop Navigation Links -->
                     <ul class="right hide-on-med-and-down">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="costs.html">Cost</a></li>
-                        <li class="active"><a href="restaurants.html">Restaurants</a></li>
+                        <li class="active"><a href="costs.html">Cost</a></li>
+                        <li><a href="restaurants.html">Restaurants</a></li>
                         <li><a href="Thingstodo.html">Things to Do</a></li>
                         <li><a href="traveltips.html">Travel Tips</a></li>
                         <li><a href="aboutus.html">About Us</a></li>
@@ -87,8 +453,8 @@
         <!-- Mobile Sidenav -->
         <ul class="sidenav" id="mobile-demo">
             <li><a href="index.html">Home</a></li>
-            <li><a href="costs.html">Cost</a></li>
-            <li class="active"><a href="restaurants.html">Restaurants</a></li>
+            <li class="active"><a href="costs.html">Cost</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
             <li><a href="Thingstodo.html">Things to Do</a></li>
             <li><a href="traveltips.html">Travel Tips</a></li>
             <li><a href="contact.html">Contact Us</a></li>
@@ -96,191 +462,226 @@
         </ul>
     </header>
 
+    <!-- Main Content Area -->
+    <main class="container">
 
-  <!-- Main Content Area -->
-  <main class="container">
+        <!-- Introduction Card -->
+        <section class="section">
+            <div class="card">
+                <p>Planning a budget for Ireland depends on your travel style, accommodations, and itinerary choices. The currency used in Ireland (Republic of Ireland) is the <strong>Euro (€)</strong>, while Northern Ireland uses the <strong>Pound Sterling (£)</strong>. Understanding typical travel costs ahead of time ensures you can experience everything Ireland has to offer without unexpected financial surprises.</p>
+            </div>
+        </section>
 
-    <!-- Introduction Card -->
-    <section class="section">
-      <div class="card">
-        <p>Planning a budget for Ireland depends on your travel style, accommodations, and itinerary choices. The currency used in Ireland (Republic of Ireland) is the <strong>Euro (€)</strong>, while Northern Ireland uses the <strong>Pound Sterling (£)</strong>. Understanding typical travel costs ahead of time ensures you can experience everything Ireland has to offer without unexpected financial surprises.</p>
-      </div>
-    </section>
+        <!-- Daily Budget Tiers -->
+        <section class="section">
+            <h2 class="section-title">Estimated Daily Budgets</h2>
 
-    <!-- Daily Budget Tiers -->
-    <section class="section">
-      <h2 class="section-title">Estimated Daily Budgets</h2>
+            <div class="grid grid-4">
+                <div class="card feature-card">
+                    <h3 class="card-title-blue">Budget Backpacker</h3>
+                    <p class="price-tag">€70 – €100 / day</p>
+                    <p>Hostel dorm beds, public bus travel, self-catering or casual pub meals, and free outdoor attractions.</p>
+                </div>
 
-      <div class="grid grid-4">
-        <div class="card feature-card">
-          <h3 class="card-title-blue">Budget Backpacker</h3>
-          <p class="price-tag">€70 – €100 / day</p>
-          <p>Hostel dorm beds, public bus travel, self-catering or casual pub meals, and free outdoor attractions.</p>
-        </div>
+                <div class="card feature-card">
+                    <h3 class="card-title-blue">Mid-Range Traveler</h3>
+                    <p class="price-tag">€160 – €260 / day</p>
+                    <p>3-star hotels or cozy B&Bs, rented car or train rides, sit-down lunches and dinners, and paid site entry tickets.</p>
+                </div>
 
-        <div class="card feature-card">
-          <h3 class="card-title-blue">Mid-Range Traveler</h3>
-          <p class="price-tag">€160 – €260 / day</p>
-          <p>3-star hotels or cozy B&Bs, rented car or train rides, sit-down lunches and dinners, and paid site entry tickets.</p>
-        </div>
+                <div class="card feature-card">
+                    <h3 class="card-title-blue">Luxury Travel</h3>
+                    <p class="price-tag">€380+ / day</p>
+                    <p>4-star/5-star boutique hotels or historic castle stays, fine dining restaurants, private guided tours, and car rentals with full insurance.</p>
+                </div>
 
-        <div class="card feature-card">
-          <h3 class="card-title-blue">Luxury Travel</h3>
-          <p class="price-tag">€380+ / day</p>
-          <p>4-star/5-star boutique hotels or historic castle stays, fine dining restaurants, private guided tours, and car rentals with full insurance.</p>
-        </div>
+                <div class="card feature-card">
+                    <h3 class="card-title-blue">Family Travel</h3>
+                    <p class="price-tag">€300 – €450 / day</p>
+                    <p>Family suites or Airbnb rentals, self-driving van rentals, child discounts on attractions, and combination dining options.</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="card feature-card">
-          <h3 class="card-title-blue">Family Travel</h3>
-          <p class="price-tag">€300 – €450 / day</p>
-          <p>Family suites or Airbnb rentals, self-driving van rentals, child discounts on attractions, and combination dining options.</p>
-        </div>
-      </div>
-    </section>
+        <!-- Interactive Ireland Trip Cost Calculator -->
+        <section class="section">
+            <div class="budget-calc-card">
+                <h2 class="budget-calc-title">Ireland Trip Cost Estimator</h2>
 
-    <!-- Detailed Expense Breakdown Grid -->
-    <section class="section">
-      <h2 class="section-title">Key Trip Expense Categories</h2>
+                <div class="calc-field-group">
+                    <label for="travelerName">Traveler Name</label>
+                    <input type="text" id="travelerName" placeholder="Enter traveler name">
+                </div>
 
-      <div class="grid grid-2">
-        <div class="card">
-          <h3 class="subsection-title">Accommodation Costs</h3>
-          <p>Accommodation is often the largest portion of a travel budget in Ireland:</p>
-          <ul class="expense-list">
-            <li><strong>Hostels:</strong> €25 – €50 per night for a dorm bed in Dublin; €20 – €35 in smaller towns.</li>
-            <li><strong>Bed & Breakfasts (B&Bs):</strong> €80 – €140 per night for double rooms including traditional breakfast.</li>
-            <li><strong>Mid-Range Hotels:</strong> €130 – €240 per night depending on location and season.</li>
-          </ul>
-        </div>
+                <div class="calc-field-group">
+                    <label for="tripDays">Trip Length (Days)</label>
+                    <input type="number" id="tripDays" min="1" placeholder="e.g., 7">
+                </div>
 
-        <div class="card">
-          <h3 class="subsection-title">Food & Dining Costs</h3>
-          <p>Meals range from quick deli sandwiches to traditional pub dinners:</p>
-          <ul class="expense-list">
-            <li><strong>Deli Counter Lunch:</strong> €6 – €10 for a fresh chicken roll, soup, or sandwich.</li>
-            <li><strong>Pub Dinner:</strong> €16 – €25 for classic Irish stew, fish and chips, or a burger.</li>
-            <li><strong>Pint of Guinness:</strong> €5.50 – €8.00 depending on city and pub location.</li>
-          </ul>
-        </div>
+                <div class="calc-field-group">
+                    <label for="dailyBudget">Estimated Daily Budget (€ EUR)</label>
+                    <input type="number" id="dailyBudget" min="1" step="0.01" placeholder="e.g., 180">
+                </div>
 
-        <div class="card">
-          <h3 class="subsection-title">Transportation Costs</h3>
-          <p>Navigating between cities and rural scenic routes:</p>
-          <ul class="expense-list">
-            <li><strong>Car Rental:</strong> €30 – €70 per day (gas/petrol & manual vs automatic transmission affects rates).</li>
-            <li><strong>Intercity Trains (Irish Rail):</strong> €15 – €35 single fare when booked online in advance.</li>
-            <li><strong>City Transport:</strong> €2 – €3 per bus or tram ride using a Leap Card discount pass.</li>
-          </ul>
-        </div>
+                <div class="calc-field-group">
+                    <label for="totalCostOutput">Estimated Total Trip Cost (Read-only Output)</label>
+                    <input type="text" id="totalCostOutput" placeholder="Result will display here" readonly>
+                </div>
 
-        <div class="card">
-          <h3 class="subsection-title">Attractions & Sightseeing</h3>
-          <p>Entry fees for top historical and natural landmarks:</p>
-          <ul class="expense-list">
-            <li><strong>Cliffs of Moher:</strong> €7 – €12 (cheaper when reserved online in advance).</li>
-            <li><strong>Blarney Castle & Gardens:</strong> €18 – €22 adult entry.</li>
-            <li><strong>OPW Heritage Pass:</strong> €40 adult pass giving access to over 40 national monuments.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+                <button type="button" class="calc-btn" onclick="calculateIrelandTripCost()">Calculate Trip Cost</button>
 
-    <!-- Highlights & Visual Guides -->
-    <section class="section">
-      <h2 class="section-title">Smart Budgeting Insights</h2>
+                <p class="calc-helper-note">
+                    <strong>Tip:</strong> Use the daily budget tiers above (€70–€450/day) to estimate your total cost in Euros and USD.
+                </p>
 
-      <div class="grid grid-2">
-        <figure class="image-card">
-          <img src="https://images.unsplash.com/photo-1549918864-48ac978761a4?auto=format&fit=crop&w=800&q=80" alt="Public Transport and City Street in Dublin">
-          <figcaption>
-            <strong class="card-title-green">Getting Around Efficiently</strong>
-            <p>Save money on city buses and regional trains by using public transit options. Plan routes and calculate discounts on the official <a href="https://www.transportforireland.ie" target="_blank" rel="noopener">Transport for Ireland Portal</a>.</p>
-          </figcaption>
-        </figure>
+                <!-- Dynamic DOM InnerHTML Output -->
+                <div id="costSummaryOutput" class="calc-summary-box"></div>
+            </div>
+        </section>
 
-        <figure class="image-card">
-          <img src="https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&w=800&q=80" alt="Cozy Irish Countryside Accommodation">
-          <figcaption>
-            <strong class="card-title-green">Irish B&Bs & Local Stays</strong>
-            <p>Staying at family-run Bed & Breakfasts outside major city centers provides genuine hospitality, authentic breakfasts, and lower night rates during shoulder seasons.</p>
-          </figcaption>
-        </figure>
-      </div>
-    </section>
+        <!-- Detailed Expense Breakdown Grid -->
+        <section class="section">
+            <h2 class="section-title">Key Trip Expense Categories</h2>
 
-    <!-- Budgeting Advice & Tips -->
-    <section class="section">
-      <h2 class="section-title">Top Money-Saving Tips for Ireland</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="subsection-title">Accommodation Costs</h3>
+                    <p>Accommodation is often the largest portion of a travel budget in Ireland:</p>
+                    <ul class="expense-list">
+                        <li><strong>Hostels:</strong> €25 – €50 per night for a dorm bed in Dublin; €20 – €35 in smaller towns.</li>
+                        <li><strong>Bed & Breakfasts (B&Bs):</strong> €80 – €140 per night for double rooms including traditional breakfast.</li>
+                        <li><strong>Mid-Range Hotels:</strong> €130 – €240 per night depending on location and season.</li>
+                    </ul>
+                </div>
 
-      <div class="card">
-        <div class="site-sections-grid">
-          <div class="section-badge">
-            <span class="badge-title">1. Travel Shoulder Season</span>
-            <span class="badge-desc">Visit in April–May or September–October for lower flight rates and cheaper lodging.</span>
-          </div>
+                <div class="card">
+                    <h3 class="subsection-title">Food & Dining Costs</h3>
+                    <p>Meals range from quick deli sandwiches to traditional pub dinners:</p>
+                    <ul class="expense-list">
+                        <li><strong>Deli Counter Lunch:</strong> €6 – €10 for a fresh chicken roll, soup, or sandwich.</li>
+                        <li><strong>Pub Dinner:</strong> €16 – €25 for classic Irish stew, fish and chips, or a burger.</li>
+                        <li><strong>Pint of Guinness:</strong> €5.50 – €8.00 depending on city and pub location.</li>
+                    </ul>
+                </div>
 
-          <div class="section-badge">
-            <span class="badge-title">2. Get an OPW Heritage Card</span>
-            <span class="badge-desc">Offers unlimited access to state-managed castles, national parks, and historic sites.</span>
-          </div>
+                <div class="card">
+                    <h3 class="subsection-title">Transportation Costs</h3>
+                    <p>Navigating between cities and rural scenic routes:</p>
+                    <ul class="expense-list">
+                        <li><strong>Car Rental:</strong> €30 – €70 per day (gas/petrol & manual vs automatic transmission affects rates).</li>
+                        <li><strong>Intercity Trains (Irish Rail):</strong> €15 – €35 single fare when booked online in advance.</li>
+                        <li><strong>City Transport:</strong> €2 – €3 per bus or tram ride using a Leap Card discount pass.</li>
+                    </ul>
+                </div>
 
-          <div class="section-badge">
-            <span class="badge-title">3. Buy a Visitor Leap Card</span>
-            <span class="badge-desc">Saves up to 30% on Dublin Bus, Luas trams, and DART trains compared to cash fares.</span>
-          </div>
+                <div class="card">
+                    <h3 class="subsection-title">Attractions & Sightseeing</h3>
+                    <p>Entry fees for top historical and natural landmarks:</p>
+                    <ul class="expense-list">
+                        <li><strong>Cliffs of Moher:</strong> €7 – €12 (cheaper when reserved online in advance).</li>
+                        <li><strong>Blarney Castle & Gardens:</strong> €18 – €22 adult entry.</li>
+                        <li><strong>OPW Heritage Pass:</strong> €40 adult pass giving access to over 40 national monuments.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-          <div class="section-badge">
-            <span class="badge-title">4. Lunch Specials & Early Birds</span>
-            <span class="badge-desc">Many restaurants offer lower-priced lunch or "Early Bird" set menus before 6:30 PM.</span>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- Highlights & Visual Guides -->
+        <section class="section">
+            <h2 class="section-title">Smart Budgeting Insights</h2>
 
-    <!-- Page Navigation Grid -->
-    <section class="section">
-      <h2 class="section-title">Explore Our Guide</h2>
+            <div class="grid grid-2">
+                <figure class="image-card">
+                    <img src="https://images.unsplash.com/photo-1549918864-48ac978761a4?auto=format&fit=crop&w=800&q=80" alt="Public Transport and City Street in Dublin">
+                    <figcaption>
+                        <strong class="card-title-green">Getting Around Efficiently</strong>
+                        <p>Save money on city buses and regional trains by using public transit options. Plan routes and calculate discounts on the official <a href="https://www.transportforireland.ie" target="_blank" rel="noopener">Transport for Ireland Portal</a>.</p>
+                    </figcaption>
+                </figure>
 
-      <div class="grid grid-4">
-        <a href="index.html" class="card nav-card">
-          <h3 class="card-title-green">Home</h3>
-          <p>Overview, site guide, & main Ireland overview</p>
-        </a>
+                <figure class="image-card">
+                    <img src="https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&w=800&q=80" alt="Cozy Irish Countryside Accommodation">
+                    <figcaption>
+                        <strong class="card-title-green">Irish B&Bs & Local Stays</strong>
+                        <p>Staying at family-run Bed & Breakfasts outside major city centers provides genuine hospitality, authentic breakfasts, and lower night rates during shoulder seasons.</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-        <a href="restaurants.html" class="card nav-card">
-          <h3 class="card-title-green">Restaurants</h3>
-          <p>Where to eat and drink across Ireland</p>
-        </a>
+        <!-- Budgeting Advice & Tips -->
+        <section class="section">
+            <h2 class="section-title">Top Money-Saving Tips for Ireland</h2>
 
-        <a href="Thingstodo.html" class="card nav-card">
-          <h3 class="card-title-green">Things To Do</h3>
-          <p>Top attractions, tours, and outdoor activities</p>
-        </a>
+            <div class="card">
+                <div class="site-sections-grid">
+                    <div class="section-badge">
+                        <span class="badge-title">1. Travel Shoulder Season</span>
+                        <span class="badge-desc">Visit in April–May or September–October for lower flight rates and cheaper lodging.</span>
+                    </div>
 
-        <a href="traveltips.html" class="card nav-card">
-          <h3 class="card-title-green">Travel Tips</h3>
-          <p>Essential advice for a seamless journey</p>
-        </a>
-      </div>
-    </section>
+                    <div class="section-badge">
+                        <span class="badge-title">2. Get an OPW Heritage Card</span>
+                        <span class="badge-desc">Offers unlimited access to state-managed castles, national parks, and historic sites.</span>
+                    </div>
 
-    <!-- Sources Section -->
-    <section class="section sources-section">
-      <h3 class="section-title">Sources & Citations</h3>
+                    <div class="section-badge">
+                        <span class="badge-title">3. Buy a Visitor Leap Card</span>
+                        <span class="badge-desc">Saves up to 30% on Dublin Bus, Luas trams, and DART trains compared to cash fares.</span>
+                    </div>
 
-      <div class="card">
-        <ul>
-          <li>Transport for Ireland Fare & Route Guide: <a href="https://www.transportforireland.ie" target="_blank" rel="noopener">transportforireland.ie</a></li>
-          <li>Heritage Ireland Heritage Card Information: <a href="https://opw.heritageireland.ie" target="_blank" rel="noopener">heritageireland.ie</a></li>
-          <li>Tourism Ireland Official Budget & Travel Guide: <a href="https://www.ireland.com" target="_blank" rel="noopener">ireland.com</a></li>
-        </ul>
-      </div>
-    </section>
+                    <div class="section-badge">
+                        <span class="badge-title">4. Lunch Specials & Early Birds</span>
+                        <span class="badge-desc">Many restaurants offer lower-priced lunch or "Early Bird" set menus before 6:30 PM.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  </main>
+        <!-- Page Navigation Grid -->
+        <section class="section">
+            <h2 class="section-title">Explore Our Guide</h2>
 
-  <!-- Group Member Footer -->
- <footer class="page-footer teal darken-1">
+            <div class="grid grid-4">
+                <a href="index.html" class="card nav-card">
+                    <h3 class="card-title-green">Home</h3>
+                    <p>Overview, site guide, & main Ireland overview</p>
+                </a>
+
+                <a href="restaurants.html" class="card nav-card">
+                    <h3 class="card-title-green">Restaurants</h3>
+                    <p>Where to eat and drink across Ireland</p>
+                </a>
+
+                <a href="Thingstodo.html" class="card nav-card">
+                    <h3 class="card-title-green">Things To Do</h3>
+                    <p>Top attractions, tours, and outdoor activities</p>
+                </a>
+
+                <a href="traveltips.html" class="card nav-card">
+                    <h3 class="card-title-green">Travel Tips</h3>
+                    <p>Essential advice for a seamless journey</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Sources Section -->
+        <section class="section sources-section">
+            <h3 class="section-title">Sources & Citations</h3>
+
+            <div class="card">
+                <ul>
+                    <li>Transport for Ireland Fare & Route Guide: <a href="https://www.transportforireland.ie" target="_blank" rel="noopener">transportforireland.ie</a></li>
+                    <li>Heritage Ireland Heritage Card Information: <a href="https://opw.heritageireland.ie" target="_blank" rel="noopener">heritageireland.ie</a></li>
+                    <li>Tourism Ireland Official Budget & Travel Guide: <a href="https://www.ireland.com" target="_blank" rel="noopener">ireland.com</a></li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Group Member Footer -->
+    <footer class="page-footer teal darken-1">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
@@ -308,8 +709,8 @@
         </div>
     </footer>
 
-  <!-- Group Member Pagination -->
- <ul class="pagination center-align teal darken-1 black-text">
+    <!-- Group Member Pagination -->
+    <ul class="pagination center-align teal darken-1 black-text">
         <li class="waves-effect"><a href="index.html">1</a></li>
         <li class="active teal lighten-2 black-text"><a href="costs.html">2</a></li>
         <li class="waves-effect"><a href="restaurants.html">3</a></li>
@@ -320,4 +721,5 @@
     </ul>
 
 </body>
+
 </html>
