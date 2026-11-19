@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ireland Travel | Travel Costs</title>
-    <link rel="stylesheet" href="global.css">
 
     <!-- Google Fonts & Material Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +16,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="costs.css">
 
     <style>
         /* Base Page Styling */
@@ -38,10 +41,46 @@
             padding-bottom: 36px;
         }
 
-        /* Navbar Alignment */
-        nav .brand-logo {
-            font-weight: 600;
-            font-size: 1.55rem;
+        /* Navbar & Brand Logo (Matches Home Page & Prevents Overlap) */
+        header nav,
+        header nav .brand-logo {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+        }
+
+        header nav .brand-logo {
+            font-size: 2.1rem !important;
+            font-weight: 400 !important;
+            white-space: nowrap !important;
+        }
+
+        header nav .brand-logo i.material-icons {
+            font-size: 24px !important;
+            margin-right: 15px !important;
+        }
+
+        @media only screen and (min-width: 993px) {
+            header nav .nav-wrapper.container {
+                width: 90% !important;
+                max-width: 1280px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+            }
+
+            header nav .brand-logo {
+                position: static !important;
+                transform: none !important;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            header nav .brand-logo {
+                font-size: 1.65rem !important;
+            }
+
+            header nav ul a {
+                padding: 0 10px !important;
+            }
         }
 
         /* Section Spacing & Centered Teal Headings */
@@ -241,7 +280,7 @@
             margin-bottom: 4px;
         }
 
-        /* Interactive Trip Cost Calculator Card (Styled to match Form Input & DOM Output example) */
+        /* Interactive Trip Cost Calculator Card */
         .budget-calc-card {
             max-width: 640px;
             margin: 0 auto;
@@ -273,7 +312,6 @@
             margin-bottom: 8px;
         }
 
-        /* Override Materialize default underline inputs for clean rounded boxes */
         .budget-calc-card input[type="text"],
         .budget-calc-card input[type="number"] {
             width: 100% !important;
@@ -347,20 +385,55 @@
             color: #991b1b;
         }
 
-        /* Footer & Pagination Alignment */
+        /* Footer & Pagination Alignment (With White Divider Line) */
         footer.page-footer {
-            margin-top: 0;
-            padding-top: 24px;
+            margin-top: 0 !important;
+            padding-top: 20px !important;
+        }
+
+        footer.page-footer .row {
+            margin-bottom: 20px !important;
+        }
+
+        footer.page-footer ul li {
+            line-height: 1.5 !important;
+        }
+
+        footer.page-footer .footer-copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
         }
 
         ul.pagination {
-            margin: 0;
-            padding: 10px 0 14px 0;
+            margin: 0 !important;
+            padding: 0 !important;
+            border-top: 12px solid #ffffff !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        ul.pagination li {
+            height: 30px !important;
+            line-height: 30px !important;
+            margin: 0 !important;
+            border-radius: 0 !important;
         }
 
         ul.pagination li a {
-            color: #263238;
-            font-weight: 500;
+            color: #212121 !important;
+            font-size: 0.95rem !important;
+            padding: 0 10px !important;
+            height: 30px !important;
+            line-height: 30px !important;
+            display: block !important;
+        }
+
+        ul.pagination li.active {
+            background-color: #4db6ac !important;
+        }
+
+        ul.pagination li.active a {
+            color: #ffffff !important;
         }
     </style>
 
@@ -391,12 +464,14 @@
             const totalEur = days * dailyBudget;
             const totalUsd = totalEur * 1.08;
 
-            // Classify travel tier based on the guide's daily budget tiers
-            let travelStyle = "Mid-Range Traveler";
+            // Classify travel tier using let, if, else if, and else
+            let travelStyle;
             if (dailyBudget <= 100) {
                 travelStyle = "Budget Backpacker";
             } else if (dailyBudget >= 380) {
                 travelStyle = "Luxury Travel";
+            } else {
+                travelStyle = "Mid-Range Traveler";
             }
 
             const formattedEur = totalEur.toLocaleString("en-US", {
@@ -710,9 +785,9 @@
     </footer>
 
     <!-- Group Member Pagination -->
-    <ul class="pagination center-align teal darken-1 black-text">
+    <ul class="pagination center-align teal darken-1">
         <li class="waves-effect"><a href="index.html">1</a></li>
-        <li class="active teal lighten-2 black-text"><a href="costs.html">2</a></li>
+        <li class="active teal lighten-2"><a href="costs.html">2</a></li>
         <li class="waves-effect"><a href="restaurants.html">3</a></li>
         <li class="waves-effect"><a href="Thingstodo.html">4</a></li>
         <li class="waves-effect"><a href="traveltips.html">5</a></li>
