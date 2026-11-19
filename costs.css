@@ -6,6 +6,45 @@
 @import url('global.css');
 @import url('homepage.css');
 
+/* ==========================================================================
+   Navbar & Brand Logo (Matches Home Page & Prevents Overlap)
+   ========================================================================== */
+
+header nav .nav-wrapper.container {
+  width: 90% !important;
+  max-width: 1280px !important;
+}
+
+header nav,
+header nav .brand-logo {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+}
+
+header nav .brand-logo {
+  font-size: 2.1rem !important;
+  font-weight: 400 !important;
+}
+
+header nav .brand-logo i.material-icons {
+  font-size: 24px !important;
+  margin-right: 15px !important;
+}
+
+/* Keep spacing clean on narrower laptop screens (993px–1200px) */
+@media (max-width: 1200px) {
+  header nav .brand-logo {
+    font-size: 1.65rem !important;
+  }
+
+  header nav ul a {
+    padding: 0 10px !important;
+  }
+}
+
+/* ==========================================================================
+   Daily Budgets, Expense Breakdown & Tips
+   ========================================================================== */
+
 /* Daily Budget Price Tag Highlights */
 .price-tag {
   color: #2e7d32;
@@ -89,53 +128,168 @@
   }
 }
 
-.card ul.expense-list li:last-child {
+/* ==========================================================================
+   Interactive Trip Cost Estimator
+   ========================================================================== */
+
+.budget-calc-card {
+  max-width: 640px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 1px solid #d0e4d0;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  padding: 28px 30px;
+}
+
+.budget-calc-title {
+  color: #00897b;
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e0f2f1;
+}
+
+.calc-field-group {
+  margin-bottom: 18px;
+}
+
+.calc-field-group label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+/* Overrides Materialize default underline inputs for rounded boxes */
+.budget-calc-card input[type="text"],
+.budget-calc-card input[type="number"] {
+  width: 100% !important;
+  height: 46px !important;
+  padding: 0 14px !important;
+  margin: 0 !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  background-color: #ffffff !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.95rem !important;
+  color: #1e293b !important;
+  box-sizing: border-box !important;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.budget-calc-card input[type="text"]:focus,
+.budget-calc-card input[type="number"]:focus {
+  border-color: #00897b !important;
+  box-shadow: 0 0 0 3px rgba(0, 137, 123, 0.15) !important;
+}
+
+.budget-calc-card input[readonly] {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  font-weight: 600 !important;
+  cursor: default;
+}
+
+.calc-btn {
+  width: 100%;
+  height: 48px;
+  background-color: #00897b;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.calc-btn:hover {
+  background-color: #00796b;
+}
+
+.calc-helper-note {
+  margin-top: 14px;
   margin-bottom: 0;
+  font-size: 0.85rem;
+  color: #555555;
 }
 
-.card ul.expense-list li strong {
-  color: #222222;
-}
-
-/* Money-Saving Tips 2-Column Badge Grid */
-.site-sections-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-.section-badge {
+.calc-summary-box {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 8px;
   background-color: #f3f8f3;
   border: 1px solid #d0e4d0;
   border-left: 4px solid #2e7d32;
-  border-radius: 6px;
-  padding: 12px 14px;
-  display: flex;
-  flex-direction: column;
-}
-
-.section-badge .badge-title {
-  font-weight: 700;
-  color: #2e7d32;
+  color: #1e293b;
   font-size: 0.92rem;
-  margin-bottom: 4px;
+  line-height: 1.55;
+  display: none;
 }
 
-.section-badge .badge-desc {
-  font-size: 0.84rem;
-  color: #555555;
-  line-height: 1.35;
+.calc-summary-box.error {
+  background-color: #fef2f2;
+  border-color: #fecaca;
+  border-left: 4px solid #dc2626;
+  color: #991b1b;
 }
 
-/* Image Card Figcaption Line-Height */
-.image-card figcaption p {
-  line-height: 1.4;
-  margin-top: 4px;
+/* ==========================================================================
+   Footer & Pagination Bar (With White Divider Line)
+   ========================================================================== */
+
+footer.page-footer {
+  margin-top: 0 !important;
+  padding-top: 20px !important;
 }
 
-/* Responsive adjustment for badges on mobile screens */
-@media (max-width: 600px) {
-  .site-sections-grid {
-    grid-template-columns: 1fr;
-  }
+footer.page-footer .row {
+  margin-bottom: 20px !important;
+}
+
+footer.page-footer ul li {
+  line-height: 1.5 !important;
+}
+
+footer.page-footer .footer-copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+ul.pagination {
+  margin: 0 !important;
+  padding: 0 !important;
+  border-top: 12px solid #ffffff !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+ul.pagination li {
+  height: 30px !important;
+  line-height: 30px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+ul.pagination li a {
+  color: #212121 !important;
+  font-size: 0.95rem !important;
+  padding: 0 10px !important;
+  height: 30px !important;
+  line-height: 30px !important;
+  display: block !important;
+}
+
+ul.pagination li.active {
+  background-color: #4db6ac !important;
+}
+
+ul.pagination li.active a {
+  color: #ffffff !important;
 }
